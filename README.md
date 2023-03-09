@@ -57,3 +57,35 @@ Pages post-login:
 - Add, Edit pages for each category
 - Delete is a backend function
     - Defensive program this with a Javascript modal
+
+
+Readme stuff:
+- Introduction(Live site/Repos links)
+- Developer goals
+- User stories
+- Design choices
+- Wireframes (FIGMA) - Desktop, Tablet, Mobile
+
+- Features
+    - Login/Logout/Register
+    - Adding books
+    - Editing books
+    - Deleting
+    - Profile
+
+- Navigation
+
+- Testing and Validation:
+    - Validation (HTML, CSS, JSHint, Python PEP8)
+    - Manual (Tables, Test-Pass)
+    - Amiresponsive
+    - Media Queries
+    - Bugs and Fixes
+
+- Deployment (Github and Heroku):
+    - Github
+    - Gitpod
+    - Heroku
+
+- Credits
+    - Code bases and libraries
