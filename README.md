@@ -52,3 +52,8 @@ Pages post-login:
 
 - Additional functionality if we have time:
     - Try to API export the reading list to a google sheets?
+
+
+- Add, Edit pages for each category
+- Delete is a backend function
+    - Defensive program this with a Javascript modal
