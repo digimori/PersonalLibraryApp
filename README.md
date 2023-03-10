@@ -89,3 +89,4 @@ Readme stuff:
 
 - Credits
     - Code bases and libraries
+    - I kept a fair few bits of code from the mini project surrounding the login/register functionality to maintain securite measures and validation

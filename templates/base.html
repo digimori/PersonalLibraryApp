@@ -14,6 +14,7 @@
 <body> 
     <header>
     <!-- Top Navigation -->
+    
     <nav>
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">Logo</a>
@@ -29,9 +30,8 @@
         <li><a href="{{ url_for('get_books') }}">Reading List</a></li>
         <li><a href="{{ url_for('login') }}">Register/Login</a></li>
     </ul>
-   </header>
-
-   <main class="container">
+</header>
+<main class="container">
     {% block content %}
     {% endblock %}
 </main>
