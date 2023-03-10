@@ -1,20 +1,10 @@
 {% extends "base.html" %}
-{% block content %} 
+{% block content %}
 
-<!----------------------- Welcome panel ----------------------------->
-<div class="row">
-<div class="card col s12 m6 offset-m3">
-    <div class="card-content">
-      <p>Welcome to my personal library.<br>
-         A handy tool to keep track of your reading list, what you've read, want to read and pre-orders
-        <br>
-        Please login below to continue:
-    </div>
-      </div>
-      <div class="row">
-        <form class="col s12 m6 offset-m3" method="POST" action="#">
+    <div class="row">
+        <form class="col s12 m4" method="POST" action="#">
             <div class="card-panel">
-<!----------------------- Username Container ----------------------------->
+                <!-- username -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-cog prefix brown-text lighten-2"></i>
@@ -23,7 +13,7 @@
                         <label for="username">Username</label>
                     </div>
                 </div>
-<!----------------------- Password Container ----------------------------->
+                <!-- passowrd -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-lock prefix brown-text lighten-2"></i>
@@ -32,24 +22,23 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-<!----------------------- Login Button ----------------------------->
+                <!-- login -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large brown lighten-4 text-shadow">
+                    <button type="submit" class="col s12 btn waves-effect waves-light text-shadow">
                         Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </div>
         </form>
     </div>
-<!----------------------- Registration Button ----------------------------->
+
+    <div class="row">
         <div class="col s12">
             <p class="center-align">
                 Don't have an account yet?
-                <a href="{{ url_for('register') }}" class="light-blue-text text-darken-4">Register Account</a>
+                <a href="{{ url_for('register') }}" class="light-brown-text text-darken-4">Register Account</a>
             </p>
         </div>
     </div>
 
-
-    
 {% endblock %}

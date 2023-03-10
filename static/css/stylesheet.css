@@ -3,9 +3,22 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #817a5e;
+  }
+
+  .nav-wrapper {
+    background-color: #b79d8c;
   }
 
   main {
     flex: 1 0 auto;
   }
      
+  #footertext {
+    padding-bottom: 15px;
+  }
+
+  .btn-large {
+    background-color: #817a5e;
+    color: #fff;
+  }

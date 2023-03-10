@@ -14,24 +14,20 @@
 <body> 
     <header>
     <!-- Top Navigation -->
-    <nav class="brown lighten-2">
+    <nav>
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">Logo</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_books') }}">Reading List</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
+                <li><a href="{{ url_for('register') }}">Register/Login</a></li>
             </ul>
         </div>
     </nav>
     <!-- Mobile Navigation/ Side Nav -->
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        <li><a href="{{ url_for('get_books') }}">Reading List</a></li>
+        <li><a href="{{ url_for('login') }}">Register/Login</a></li>
     </ul>
    </header>
 
@@ -39,6 +35,13 @@
     {% block content %}
     {% endblock %}
 </main>
+
+<footer class="page-footer brown lighten-2">
+      <div class="container" id="footertext">
+      © 2014 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+  </footer>
 
     
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
