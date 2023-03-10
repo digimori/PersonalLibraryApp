@@ -26,7 +26,7 @@ def index():
 
 @app.route("/get_books")
 def get_books():
-    books = mongo.db.booksread.find()
+    books = list(mongo.db.booksread.find())
     return render_template("readinglist.html", booksread=books)
 
 

@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for books in booksread %}
-{{ books.title }}<br>
-{{ books.author }}
-{% endfor %}
+
+<ul class="collapsible">
+    {% for book in booksread %}
+    <li>
+      <div class="collapsible-header"><i class="fas fa-caret-down prefix">{{ book.category_name }}</i></div>
+      <div class="collapsible-body"><br>
+        {{ book.title }}<br>
+        {{ book.author }}<br>
+        {{ book.genre }}<br></div>
+    </li>
+    {% endfor %}
+  </ul>
+        
+
 {% endblock %}

@@ -27,10 +27,11 @@
     </nav>
     <!-- Mobile Navigation/ Side Nav -->
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="{{ url_for('get_books') }}">Reading List</a></li>
+        <li><a href="#">Reading List</a></li>
         <li><a href="{{ url_for('login') }}">Register/Login</a></li>
     </ul>
 </header>
+
 <main class="container">
     {% block content %}
     {% endblock %}
