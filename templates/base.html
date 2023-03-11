@@ -17,7 +17,7 @@
     
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
+            <a href="{{ url_for('index') }}" class="brand-logo"><img src="https://img.icons8.com/ios-filled/50/ffffff/book-shelf.png"/></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_books') }}">Reading List</a></li>
@@ -40,7 +40,7 @@
 <footer class="page-footer brown lighten-2">
       <div class="container" id="footertext">
       © 2014 Copyright Text
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      <a class="grey-text text-lighten-4 right" href="https://icons8.com" target="_blank">Extra icons provided by icons8</a>
       </div>
   </footer>
 

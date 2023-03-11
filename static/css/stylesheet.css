@@ -22,3 +22,7 @@ body {
     background-color: #817a5e;
     color: #fff;
   }
+
+  .brand-logo {
+    margin: 8px 0px 2px 20px;
+  }
