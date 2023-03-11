@@ -20,25 +20,47 @@
 <!-- Is there a way to move one to another, like from reading list to read, preorder to reading list... -->
 
 <!-- Search box here with data showing underneath in a div -->
-
+<div class="row">
+<div class="col s12 m8 offset-m2">
     <ul class="collapsible">
         <li>
             <div class="collapsible-header white-text light-blue darken-4 text-shadow">
-                <div class="col s3">
+                <div class="col s13">
                     <i class="fas fa-caret-down"></i>
                 </div>
                 <div class="col s9">
-                    <strong>whydidyoustoprendering</strong> : arrghh
+                    <strong></strong>
                 </div>
             </div>
             <div class="collapsible-body">
-                <strong>srslynotcool</strong>
-                <p></p>
+                <div class="row">
+                    {% for book in booksread %}
+                    <div class="col s12 m4">
+                      <div class="card-panel teal">
+                        <span class="white-text">
+                            <strong>{{ book.title }}</strong><br> by: <em>{{ book.author }}</em>
+                        </span>
+                        <p>
+                            Genre: {{ book.genre }}<br>
+                            Rating: {{ book.rating }}<br>
+                            Publication date: {{ book.release_date }}<br>
+                            Publisher: {{ book.publisher }}<br>
+                            Page Count: {{ book.page_count }}<br>
+                            ISBN-13: {{ book.isbn }}
+                        </p>
+
+                        <!-- Edit button here --> <!-- Cancel also -->
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+<!-- Card panels here for each entry for loop this -->
+
             </div>
         </li>
     </ul>
-
-
+</div>
+</div>
     <!-- Accordion here for Books on reading list -->
     <!-- Accordion for Books read -->
     <!-- Accordion for preorders -->
