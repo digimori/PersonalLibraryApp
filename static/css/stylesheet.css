@@ -26,3 +26,34 @@ body {
   .brand-logo {
     margin: 8px 0px 2px 20px;
   }
+
+  .cardcontent {
+    font-size: 0.75em;
+    font-weight: 500;
+    color: white;
+  }
+
+  .collapsecontainer {
+    border-radius: 10px;
+  }
+
+  .collapsible,
+  .collapsible-body,
+  .collapsible-header {
+    border: 0!important;
+    box-shadow: none!important;
+  }
+
+  .welcomemessage {
+    color: #fff;
+    font-size: 1.25em;
+
+  }
+
+  #welcomepanel {
+    margin-top: 180px;
+  }
+
+  .card {
+    border-radius: 20px!important;
+  }

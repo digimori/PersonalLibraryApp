@@ -13,24 +13,40 @@
 
 <body> 
     <header>
-    <!-- Top Navigation -->
-    
-    <nav>
-        <div class="nav-wrapper">
-            <a href="{{ url_for('index') }}" class="brand-logo"><img src="https://img.icons8.com/ios-filled/50/ffffff/book-shelf.png"/></a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('get_books') }}">Reading List</a></li>
-                <li><a href="{{ url_for('register') }}">Register/Login</a></li>
-            </ul>
-        </div>
-    </nav>
-    <!-- Mobile Navigation/ Side Nav -->
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Reading List</a></li>
-        <li><a href="{{ url_for('login') }}">Register/Login</a></li>
-    </ul>
-</header>
+        <!-- top navbar -->
+        {% if session.user %}
+		<nav class="nav-extended text-shadow light-blue darken-1">
+			<div class="nav-wrapper">
+				<a href="{{ url_for('index') }}" class="brand-logo">My Personal Library</a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+				</ul>
+			</div>
+		</nav>
+ {% endif %}
+        <!-- mobile sidenav --> 
+		<ul class="sidenav" id="mobile-demo">
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+		</ul> 
+	</header>
+
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
 
 <main class="container">
     {% block content %}
