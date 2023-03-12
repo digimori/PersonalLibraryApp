@@ -105,6 +105,23 @@ def logout():
     return redirect(url_for("index"))
 
 
+@app.route("/add_book", methods=["GET", "POST"])
+def add_book():
+    if request.method == "POST":
+        book = {
+            "title": request.form.get("title"),
+            "author": request.form.get("author"),
+            "genre": request.form.get("genre"),
+            "release_date": request.form.get("release_date"),
+        }
+        mongo.db.booksread.insert_one(book)
+        flash("Book Successfully Added")
+        return redirect(url_for("get_books"))
+
+    bookcat = mongo.db.booksread.find().sort("booksread", 1)
+    return render_template("add_book.html", booksread=bookcat)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
