@@ -33,15 +33,20 @@ body {
     color: white;
   }
 
-  .collapsecontainer {
+  div.collapsecontainer {
     border-radius: 10px;
   }
 
-  .collapsible,
-  .collapsible-body,
-  .collapsible-header {
-    border: 0!important;
-    box-shadow: none!important;
+  div.collapsible,
+  div.collapsible-body,
+  div.collapsible-header {
+    border: 0;
+    box-shadow: none;
+  }
+
+  div.collapsible-body {
+    background-color: #b79d8c;
+    border-radius: 5px;
   }
 
   .welcomemessage {
@@ -51,9 +56,19 @@ body {
   }
 
   #welcomepanel {
-    margin-top: 180px;
+    margin-top: 20px;
   }
 
-  .card {
-    border-radius: 20px!important;
+  #loginpanel {
+    border-radius: 10px;
   }
+
+  div.card,
+  div.card-panel {
+    border-radius: 20px;
+  }
+
+  .account {
+    font-weight: 700;
+  }
+

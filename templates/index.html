@@ -3,7 +3,7 @@
 
 <!----------------------- Welcome panel ----------------------------->
 <div class="row" id="welcomepanel">
-<div class="card col s12 m6 offset-m3">
+<div class="card col s12 m4 offset-m4">
     <div class="card-content center-align">
       <h4>Welcome to my personal library</h4>
          <p>A handy tool to keep track of your reading list, what you've read, want to read and pre-orders</p>
@@ -12,7 +12,7 @@
     </div>
       </div>
       <div class="row">
-        <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('login') }}">
+        <form class="col s12 m4 offset-m4" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel">
 <!----------------------- Username Container ----------------------------->
                 <div class="row">
@@ -34,7 +34,7 @@
                 </div>
 <!----------------------- Login Button ----------------------------->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large brown lighten-4 text-shadow">
+                    <button type="submit" class="col s12 btn-large waves-effect waves-light brown lighten-1 text-shadow">
                         Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
@@ -43,9 +43,9 @@
     </div>
 <!----------------------- Registration Button ----------------------------->
         <div class="col s12">
-            <p class="center-align">
+            <p class="center-align account">
                 Don't have an account yet?
-                <a href="{{ url_for('register') }}" class="light-blue-text text-darken-4">Register Account</a>
+                <a href="{{ url_for('register') }}" class="white-text">Register Account</a>
             </p>
         </div>
     </div>

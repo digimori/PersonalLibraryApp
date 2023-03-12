@@ -2,15 +2,15 @@
 {% block content %}
 
 
-    <div class="row">
-        <div class="col s12 m4 l8">
-                <h5 class="center-align welcomemessage">
-                    {{ username }}'s Library
-                </h5>
-        </div>
+<div class="row">
+    <div class="col s12 m4 l8">
+        <h5 class="center-align welcomemessage">
+            {{ username }}'s Library
+        </h5>
     </div>
+</div>
 
-    <!-- Side nav -->
+<!-- Side nav -->
 <!-- Add new book
     Edit Book 
 (Edit book will have a delete function)-->
@@ -19,48 +19,89 @@
 
 <!-- Search box here with data showing underneath in a div -->
 <div class="row">
-<div class="col s12 m8 offset-m2 ">
-    <ul class="collapsible">
-        <li>
-            <div class="collapsible-header white-text brown darken-4 text-shadow collapsecontainer">
-                <div class="col s13">
-                    <i class="fas fa-caret-down"></i>
-                </div>
-                <div class="col s9">
-                    <strong></strong>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="row">
-                    {% for book in booksread %}
-                    <div class="col s12 m4">
-                      <div class="card-panel teal">
-                        <span class="white-text">
-                            <strong>{{ book.title }}</strong><br> by: <em>{{ book.author }}</em>
-                        </span>
-                        <p class="cardcontent">
-                            <strong>Genre:</strong> {{ book.genre }}<br>
-                            <strong>Rating:</strong> {{ book.rating }}<br>
-                            Publication date: {{ book.release_date }}<br>
-                            Publisher: {{ book.publisher }}<br>
-                            Page Count: {{ book.page_count }}<br>
-                            ISBN-13: {{ book.isbn }}
-                        </p>
-
-                        <!-- Edit button here --> <!-- Cancel also -->
-                      </div>
+    <div class="col s12 m8 offset-m2 ">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header white-text brown darken-4 text-shadow collapsecontainer">Books Read
+                    <div class="col s13">
+                        <i class="fas fa-caret-down"></i>
                     </div>
-                    {% endfor %}
-                  </div>
-<!-- Card panels here for each entry for loop this -->
+                </div>
+                <div class="collapsible-body">
+                    <div class="row">
+                        {% for book in booksread %}
+                        <div class="col s12 m4">
+                            <div class="card-panel teal">
+                                <span class="white-text">
+                                    <strong>{{ book.title }}</strong><br> by: <em>{{ book.author }}</em>
+                                </span>
+                                <p class="cardcontent">
+                                    <strong>Genre:</strong> {{ book.genre }}<br>
+                                    <strong>Rating:</strong> {{ book.rating }}<br>
+                                    Publication date: {{ book.release_date }}<br>
+                                    Publisher: {{ book.publisher }}<br>
+                                    Page Count: {{ book.page_count }}<br>
+                                    ISBN-13: {{ book.isbn }}
+                                </p>
+                                <!-- Edit button here -->
+                                <button data-target="modal1" class="btn modal-trigger" name="edit_book">
+                                    <i class="fas fa-pencil prefix"></i>
+                                </button>
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                      <h4>Modal Header</h4>
+                                      <p>A bunch of text</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                    </div>
+                                  </div>
+                                <!-- Cancel also -->
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m8 offset-m2 ">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header white-text brown darken-4 text-shadow collapsecontainer">Unread Books
+                    <div class="col s13">
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                </div>
+                <div class="collapsible-body">
+                    <div class="row">
+                        {% for books in bookstoberead %}
+                        <div class="col s12 m4">
+                            <div class="card-panel teal">
+                                <span class="white-text">
+                                    <strong>{{ books.title }}</strong><br> by: <em>{{ books.author }}</em>
+                                </span>
+                                <p class="cardcontent">
+                                    <strong>Genre:</strong> {{ books.genre }}<br>
+                                    Publication date: {{ books.release_date }}<br>
+                                    Publisher: {{ books.publisher }}<br>
+                                    Page Count: {{ books.page_count }}<br>
+                                    ISBN-13: {{ books.isbn }}
+                                </p>
 
-            </div>
-        </li>
-    </ul>
+                                <!-- Edit button here -->
+                                <!-- Cancel also -->
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
-</div>
-    <!-- Accordion here for Books on reading list -->
-    <!-- Accordion for Books read -->
-    <!-- Accordion for preorders -->
 
 {% endblock %}
