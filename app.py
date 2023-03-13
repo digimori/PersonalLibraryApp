@@ -90,7 +90,7 @@ def profile(username):
 
     if session["user"]:
         return render_template(
-            "profile.html", 
+            "profile.html",
             username=username, booksread=books, bookstoberead=unread
             )
 
@@ -126,6 +126,28 @@ def add_book():
 
     bookcat = mongo.db.reading_list.find().sort("category_name", 1)
     return render_template("add_book.html", reading_list=bookcat)
+
+
+@app.route("/edit_book/<book_id>", methods=["GET", "POST"])
+def edit_book(book_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "title": request.form.get("title"),
+            "author": request.form.get("author"),
+            "genre": request.form.get("genre"),
+            "rating": request.form.get("rating"),
+            "release_date": request.form.get("release_date"),
+            "publisher": request.form.get("publisher"),
+            "page_count": request.form.get("page_count"),
+            "isbn": request.form.get("isbn")
+        }
+        mongo.db.tasks.update({"_id": ObjectId(book_id)}, submit)
+        flash("Book Entry Edited")
+
+    books = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
+    categories = mongo.db.reading_list.find().sort("category_name", 1)
+    return render_template("edit_book.html", booksread=books, reading_list=categories)
 
 
 if __name__ == "__main__":
