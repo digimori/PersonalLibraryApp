@@ -13,12 +13,10 @@ Pages pre-login:
 Pages post-login:
 - Profile
     - Display reading (to-read) list
-        - Perhaps as a carousel if we can get it to function
 
 - Reading list (dropdown menu in nav-bar)
     - (Get/View) To read
     - (Get/View) Read
-    - (Get/View) Pre-order
 
 - Database schema (To Read):
     - Title
@@ -28,6 +26,7 @@ Pages post-login:
     - Publisher
     - ISBN-13
     - Page Count
+    - Synopsis (TextArea)
 
 - Database Schema (Read):
     - Title
@@ -38,17 +37,8 @@ Pages post-login:
     - Publisher
     - ISBN-13
     - Page Count
+    - Synopsis (TextArea)
 
-- Database Schema (Pre-order):
-    - Title
-    - Author
-    - Genre
-    - Release Date
-    - Publisher
-    - Page Count
-
-- On pre-order books page(To consider):
-    - Link to book?
 
 - Additional functionality if we have time:
     - Try to API export the reading list to a google sheets?

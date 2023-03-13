@@ -84,6 +84,8 @@ def login():
 def profile(username):
     books = list(mongo.db.booksread.find())
     unread = list(mongo.db.bookstoberead.find())
+    categories = mongo.db.reading_list.find().sort("category_name", 1)
+
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -91,7 +93,7 @@ def profile(username):
     if session["user"]:
         return render_template(
             "profile.html",
-            username=username, booksread=books, bookstoberead=unread
+            username=username, booksread=books, bookstoberead=unread, reading_list=categories
             )
 
     return redirect(url_for("login"))
@@ -147,7 +149,9 @@ def edit_book(book_id):
 
     books = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
     categories = mongo.db.reading_list.find().sort("category_name", 1)
-    return render_template("edit_book.html", booksread=books, reading_list=categories)
+    return render_template(
+        "profile.html", booksread=books, readinglist=categories
+        )
 
 
 if __name__ == "__main__":
