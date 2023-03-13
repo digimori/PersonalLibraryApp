@@ -109,17 +109,23 @@ def logout():
 def add_book():
     if request.method == "POST":
         book = {
+            "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
             "author": request.form.get("author"),
             "genre": request.form.get("genre"),
+            "rating": request.form.get("rating"),
             "release_date": request.form.get("release_date"),
-        }
-        mongo.db.booksread.insert_one(book)
-        flash("Book Successfully Added")
-        return redirect(url_for("get_books"))
+            "publisher": request.form.get("publisher"),
+            "page_count": request.form.get("page_count"),
+            "isbn": request.form.get("isbn")
+            }
+        mongo.db.bookstoberead.insert_one(book)
 
-    bookcat = mongo.db.booksread.find().sort("booksread", 1)
-    return render_template("add_book.html", booksread=bookcat)
+        flash("Book Successfully Added")
+        return redirect(url_for("add_book"))
+
+    bookcat = mongo.db.reading_list.find().sort("category_name", 1)
+    return render_template("add_book.html", reading_list=bookcat)
 
 
 if __name__ == "__main__":
