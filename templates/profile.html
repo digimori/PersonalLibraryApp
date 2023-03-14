@@ -30,7 +30,7 @@
                     <div class="row">
                         {% for book in booksread %}
                         <div class="col s12 m4">
-                            <div class="card-panel teal">
+                            <div class="card-panel">
                                 <span class="white-text">
                                     <strong>{{ book.title }}</strong><br> by: <em>{{ book.author }}</em>
                                 </span>
@@ -45,7 +45,7 @@
 
  <!--------------------------- Edit button here, opens modal with Edit form --------------------------->
 
-                                <button data-target="modal1" class="btn modal-trigger" name="edit_book">
+                                <button data-target="modal1" class="btn modal-trigger" name="edit_book" id="modalpencil">
                                     <i class="fas fa-pencil prefix"></i>
                                 </button>
                                 <div id="modal1" class="modal">
@@ -190,11 +190,11 @@
                     <div class="row">
                         {% for books in bookstoberead %}
                         <div class="col s12 m4">
-                            <div class="card-panel teal">
+                            <div class="card-panel">
                                 <span class="white-text">
                                     <strong>{{ books.title }}</strong><br> by: <em>{{ books.author }}</em>
                                 </span>
-                                <p class="cardcontent">
+                                <p class="cardcontent white-text">
                                     <strong>Genre:</strong> {{ books.genre }}<br>
                                     Publication date: {{ books.release_date }}<br>
                                     Publisher: {{ books.publisher }}<br>

@@ -55,11 +55,11 @@ button.btn-large {
   border-radius: 10px;
 }
 
-  .cardcontent {
-    font-size: 0.75em;
-    font-weight: 500;
-    color: white;
-    font-family: 'Libre Baskerville', serif;
+.cardcontent {
+  font-size: 0.75em;
+  font-weight: 500;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
   }
 
   div.collapsecontainer {
@@ -118,6 +118,7 @@ button.btn-large {
   div.card,
   div.card-panel {
     border-radius: 20px;
+    background-color: #524c48;
   }
 
   .account {
@@ -129,10 +130,10 @@ margin-bottom: -20px;
 font-family: 'Libre Baskerville', serif;
 }
 
-button.modaltrigger {
+#modalpencil {
   border-radius: 5px;
-  background-color: #524c48;
-  color: #fff;
+  background-color: #fff;
+  color: #524c48;
 }
 
 
