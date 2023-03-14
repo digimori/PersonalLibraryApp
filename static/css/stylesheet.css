@@ -72,3 +72,14 @@ body {
     font-weight: 700;
   }
 
+div.formentry {
+margin-bottom: -20px;
+}
+
+div.submitbutton {
+  margin-top: 10px;
+}
+
+button.btn-large {
+  border-radius: 10px;
+}
