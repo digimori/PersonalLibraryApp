@@ -5,10 +5,10 @@
     <div class="col s12 m6 offset-m3">
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_book') }}">
-        <!-- category selection -->
+<!------------------------------ Category Selection -------------------------------->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix brown-text"></i>
+                <i class="fas fa-folder-open prefix brown-text text-darken-3"></i>
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Choose Category</option>
                     {% for category in reading_list %}
@@ -18,10 +18,10 @@
                 <label for="category_name">Book category</label>
             </div>
         </div>
-        <!-- task name -->
+<!------------------------------ Book title -------------------------------->
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
                 <input id="title" name="title" minlength="5" maxlength="50"
                     type="text" class="validate" required>
                 <label for="title">Book title</label>
@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
                 <input id="author" name="author" minlength="5" maxlength="50"
                     type="text" class="validate" required>
                 <label for="author">Author</label>
@@ -37,7 +37,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
                 <input id="genre" name="genre" minlength="5" maxlength="50"
                     type="text" class="validate" required>
                 <label for="genre">Genre</label>
@@ -45,7 +45,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
                 <input id="rating" name="rating" minlength="2" maxlength="5"
                     type="text" class="validate" required>
                 <label for="rating">Rating</label>
@@ -54,7 +54,7 @@
         <!-- Release Date Picker -->
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-calendar-alt prefix light-brown-text text-darken-4"></i>
+                <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
                 <input id="release_date" name="release_date" type="text" class="datepicker validate" required>
                 <label for="release_date">Publication Date:</label>
             </div>
@@ -62,7 +62,7 @@
 
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
                 <input id="publisher" name="publisher" minlength="3" maxlength="15"
                     type="text" class="validate" required>
                 <label for="publisher">Publisher</label>
@@ -70,7 +70,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
                 <input id="page_count" name="page_count" minlength="1" maxlength="5"
                     type="text" class="validate" required>
                 <label for="page_count">Page Count</label>
@@ -78,16 +78,16 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-list-ol prefix brown-text text-darken-3"></i>
                 <input id="isbn" name="isbn" minlength="3" maxlength="50"
                     type="text" class="validate" required>
                 <label for="isbn">ISBN-13</label>
             </div>
         </div>
-        <!-- submit button -->
+<!------------------------------ Submit Button -------------------------------->
         <div class="row">
             <div class="col s12 center-align submitbutton">
-                <button type="submit" class="btn-large brown darken-1 text-shadow">
+                <button type="submit" class="btn-large brown darken-3 text-shadow">
                     Add Book <i class="fas fa-plus-square right"></i>
                 </button>
             </div>

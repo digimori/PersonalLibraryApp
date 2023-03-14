@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/58f44bc351.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     <title>Personal Library</title>
 </head>
 
@@ -15,9 +16,9 @@
     <header>
         <!-- top navbar -->
         {% if session.user %}
-		<nav class="nav-extended text-shadow brown darken-1">
+		<nav class="nav-extended text-shadow s12 m6">
 			<div class="nav-wrapper">
-				<a href="{{ url_for('index') }}" class="brand-logo">My Personal Library</a>
+				<a href="{{ url_for('index') }}" class="brand-logo"><h5>My Personal Library</h5></a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
 					<li><a href="{{ url_for('index') }}">Home</a></li>
