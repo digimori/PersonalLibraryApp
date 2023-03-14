@@ -30,7 +30,11 @@ body {
      
   #footertext {
     padding-bottom: 15px;
-    font-family: 'Louis Baskerville', serif;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  footer.page-footer {
+    background-color: #524c48;
   }
 
 /* --------------- Buttons ---------------*/
@@ -52,10 +56,10 @@ button.btn-large {
 }
 
   .cardcontent {
-    font-size: 1em;
+    font-size: 0.75em;
     font-weight: 500;
     color: white;
-    font-family: 'Louis Baskerville', serif;
+    font-family: 'Libre Baskerville', serif;
   }
 
   div.collapsecontainer {
@@ -96,7 +100,7 @@ button.btn-large {
   #welcomecardheader {
     background-color: #524c48;
     color: #fff;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Special Elite', serif;
   }
 
   #welcomepanel {
