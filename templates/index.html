@@ -13,7 +13,7 @@
       </div>
       <div class="row">
         <form class="col s12 m4 offset-m4" method="POST" action="{{ url_for('login') }}">
-            <div class="card-panel">
+            <div class="card-panel login">
 <!----------------------- Username Container ----------------------------->
                 <div class="row">
                     <div class="input-field col s12">
@@ -42,7 +42,7 @@
         </form>
     </div>
 <!----------------------- Registration Button ----------------------------->
-        <div class="col s12">
+        <div class="col s12 registrationline">
             <p class="center-align account">
                 Don't have an account yet?
                 <a href="{{ url_for('register') }}" class="white-text">Register Account</a>

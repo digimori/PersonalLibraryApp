@@ -16,6 +16,13 @@
 <!-- Search box here with data showing underneath in a div -->
 
 <!-- Books that have been read in this box - Add a little explanation above it -->
+
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        Section for a description of whats going on here. Profile welcome, add book link etc.
+    </div>
+</div>
+
 <div class="row">
     <div class="col s12 m8 offset-m2 ">
         <ul class="collapsible">
@@ -30,7 +37,7 @@
                     <div class="row">
                         {% for book in booksread %}
                         <div class="col s12 m4">
-                            <div class="card-panel">
+                            <div class="card-panel bookcontent">
                                 <span class="white-text">
                                     <strong>{{ book.title }}</strong><br> by: <em>{{ book.author }}</em>
                                 </span>

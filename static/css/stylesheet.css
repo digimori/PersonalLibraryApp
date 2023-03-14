@@ -115,14 +115,28 @@ button.btn-large {
     border-radius: 10px;
   }
 
-  div.card,
-  div.card-panel {
+  div.card-panel.login {
+    border-radius: 20px;
+  }
+
+  div.card-panel.bookcontent {
     border-radius: 20px;
     background-color: #524c48;
   }
 
+a.white-text {
+  text-decoration: underline;
+}
+
   .account {
     font-weight: 700;
+    font-family: 'Libre Baskerville', serif;
+    color:#fff;
+  }
+
+  .registrationline {
+    margin-top: 50px;
+    background-color: #524c48;
   }
 
 div.formentry {
@@ -136,7 +150,13 @@ font-family: 'Libre Baskerville', serif;
   color: #524c48;
 }
 
-
+.flashmessage {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #524c48;
+  font-family: 'Libre Baskerville', serif;;
+}
 
 /*------------------------------------ MEDIA QUERIES ------------------------------------ */
 
