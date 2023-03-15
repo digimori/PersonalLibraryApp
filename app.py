@@ -133,8 +133,8 @@ def add_book():
     return render_template("add_book.html", reading_list=bookcat)
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def edit_book(book_id):
+@app.route("/profile/<username>, <books_id>", methods=["GET", "POST"])
+def edit_book(books_id, username):
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -147,22 +147,20 @@ def edit_book(book_id):
             "page_count": request.form.get("page_count"),
             "isbn": request.form.get("isbn")
         }
-        mongo.db.booksread.update_one({"_id": ObjectId(book_id)}, submit)
-        mongo.db.bookstoberead.update_one({"_id": ObjectId(book_id)}, submit)
+        mongo.db.booksread.update_one({"_id": ObjectId(books_id)}, submit)
+        # mongo.db.bookstoberead.update_one({"_id": ObjectId(books_id)}, submit)
         flash("Book Entry Edited")
 
-    unreadbooks = mongo.db.bookstoberead.find_one({"_id": ObjectId(book_id)})
-    books = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
+    # unreadbooks = mongo.db.bookstoberead.find_one({"_id": ObjectId(books_id)})
+    books = mongo.db.booksread.find_one({"_id": ObjectId(books_id)})
     categories = mongo.db.reading_list.find().sort("category_name", 1)
-    return render_template(
-        booksread=books, readinglist=categories, bookstoberead=unreadbooks)
-    return redirect(url_for("profile/<username>"))
+
+    return redirect(url_for("profile/<username>", booksread=books, readinglist=categories))
 
 
-@app.route("/delete_book/<book_id>")
-def delete_book(book_id):
-    mongo.db.booksread.remove({"_id": ObjectId(book_id)})
-    mongo.db.bookstoberead.remove({"_id": ObjectId(book_id)})
+@app.route("/delete_book/<books_id>")
+def delete_book(books_id):
+    mongo.db.booksread.remove({"_id": ObjectId(books_id)})
     flash("Book Entry Successfully Deleted")
     return redirect(url_for("profile/<username>"))
 
