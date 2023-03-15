@@ -147,22 +147,23 @@ def edit_book(books_id, username):
             "page_count": request.form.get("page_count"),
             "isbn": request.form.get("isbn")
         }
-        mongo.db.booksread.update_one({"_id": ObjectId(books_id)}, submit)
+        mongo.db.booksread.replace_one({"_id": ObjectId(books_id)}, submit, True)
         # mongo.db.bookstoberead.update_one({"_id": ObjectId(books_id)}, submit)
         flash("Book Entry Edited")
 
     # unreadbooks = mongo.db.bookstoberead.find_one({"_id": ObjectId(books_id)})
-    books = mongo.db.booksread.find_one({"_id": ObjectId(books_id)})
+    book = mongo.db.booksread.find_one({"_id": ObjectId(books_id)})
     categories = mongo.db.reading_list.find().sort("category_name", 1)
 
-    return redirect(url_for("profile/<username>", booksread=books, readinglist=categories))
+    # return redirect(url_for("profile/<username>", booksread=book, readinglist=categories))
+    return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_book/<books_id>")
 def delete_book(books_id):
     mongo.db.booksread.remove({"_id": ObjectId(books_id)})
     flash("Book Entry Successfully Deleted")
-    return redirect(url_for("profile/<username>"))
+    return redirect(url_for("profile", username=session["user"]))
 
 
 if __name__ == "__main__":

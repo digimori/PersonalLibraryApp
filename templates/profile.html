@@ -61,8 +61,9 @@
 <!--------------------------------- Edit form container --------------------------------->
 
                                         <div class="row card-panel grey lighten-5">
+                                            Book ID - {{book._id}}
                                             <form class="col s12" method="POST"
-                                                action="{{ url_for('edit_book', username=username, books_id=books_id) }}">
+                                                action="{{ url_for('edit_book', username=username, books_id=book._id) }}">
 <!----------------------------- Category selection dropdown menu ----------------------------->
 
                                                 <div class="row">
