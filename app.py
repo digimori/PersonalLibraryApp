@@ -27,13 +27,14 @@ def index():
 @app.route("/get_books")
 def get_books():
     books = list(mongo.db.booksread.find())
-    return render_template("readinglist.html", booksread=books)
+    booksunread = list(mongo.db.bookstoberead.find())
+    return render_template("readinglist.html", booksread=books, booksunread=booksunread)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # Checking if the username input currently exists in the database
     if request.method == "POST":
-        # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -47,7 +48,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
+# Putting the new user into a session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -86,22 +87,23 @@ def profile(username):
     unread = list(mongo.db.bookstoberead.find())
     categories = mongo.db.reading_list.find().sort("category_name", 1)
 
-    # grab the session user's username from db
+    # Finding the user in the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
         return render_template(
             "profile.html",
-            username=username, booksread=books, bookstoberead=unread, reading_list=categories
+            username=username, booksread=books,
+            bookstoberead=unread, reading_list=categories
             )
 
     return redirect(url_for("login"))
 
 
+# Removing the user from the session cookie to logout
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("index"))
@@ -121,8 +123,8 @@ def add_book():
             "page_count": request.form.get("page_count"),
             "isbn": request.form.get("isbn")
             }
+        mongo.db.booksread.insert_one(book)
         mongo.db.bookstoberead.insert_one(book)
-
         flash("Book Successfully Added")
         return redirect(url_for("add_book"))
 
@@ -144,20 +146,22 @@ def edit_book(book_id):
             "page_count": request.form.get("page_count"),
             "isbn": request.form.get("isbn")
         }
-        mongo.db.tasks.update({"_id": ObjectId(book_id)}, submit)
+        mongo.db.booksread.update_one({"_id": ObjectId(book_id)}, submit)
+        mongo.db.bookstoberead.update_one({"_id": ObjectId(book_id)}, submit)
         flash("Book Entry Edited")
 
+    unreadbooks = mongo.db.bookstoberead.find_one({"_id": ObjectId(book_id)})
     books = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
     categories = mongo.db.reading_list.find().sort("category_name", 1)
-    return render_template(
-        "profile.html", booksread=books, readinglist=categories
-        )
+
+    return render_template("profile.html", booksread=books, readinglist=categories, bookstoberead=unreadbooks)
 
 
-@app.route("/delete_task/<book_id>")
-def delete_task(task_id):
-    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
-    flash("Task Successfully Deleted")
+@app.route("/delete_book/<book_id>")
+def delete_book(book_id):
+    mongo.db.booksread.remove({"_id": ObjectId(book_id)})
+    mongo.db.bookstoberead.remove({"_id": ObjectId(book_id)})
+    flash("Book Entry Successfully Deleted")
     return redirect(url_for("profile"))
 
 
