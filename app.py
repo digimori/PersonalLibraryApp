@@ -28,7 +28,8 @@ def index():
 def get_books():
     books = list(mongo.db.booksread.find())
     booksunread = list(mongo.db.bookstoberead.find())
-    return render_template("readinglist.html", booksread=books, booksunread=booksunread)
+    return render_template(
+        "readinglist.html", booksread=books, booksunread=booksunread)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -132,7 +133,7 @@ def add_book():
     return render_template("add_book.html", reading_list=bookcat)
 
 
-@app.route("/edit_book/<book_id>", methods=["GET", "POST"])
+@app.route("/profile/<username>", methods=["GET", "POST"])
 def edit_book(book_id):
     if request.method == "POST":
         submit = {
@@ -153,8 +154,9 @@ def edit_book(book_id):
     unreadbooks = mongo.db.bookstoberead.find_one({"_id": ObjectId(book_id)})
     books = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
     categories = mongo.db.reading_list.find().sort("category_name", 1)
-
-    return render_template("profile.html", booksread=books, readinglist=categories, bookstoberead=unreadbooks)
+    return render_template(
+        booksread=books, readinglist=categories, bookstoberead=unreadbooks)
+    return redirect(url_for("profile/<username>"))
 
 
 @app.route("/delete_book/<book_id>")
@@ -162,7 +164,7 @@ def delete_book(book_id):
     mongo.db.booksread.remove({"_id": ObjectId(book_id)})
     mongo.db.bookstoberead.remove({"_id": ObjectId(book_id)})
     flash("Book Entry Successfully Deleted")
-    return redirect(url_for("profile"))
+    return redirect(url_for("profile/<username>"))
 
 
 if __name__ == "__main__":
