@@ -10,16 +10,35 @@
     </div>
 </div>
 
+<br>
 
-<!-- Is there a way to move one to another, like from reading list to read, preorder to reading list... -->
+<div class="row ">
+    <form action="{{ url_for('search') }}" method="post" class="col s8 offset-s2">
+        <div class="row valign-wrapper center-align">
+            <div class="input-field col s12 m8">
+                <i class="fas fa-search prefix brown-text text-darken-3"></i>
+                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                <label for="query">Search Book Entries</label>
+            </div>
+            <div class="col s12 m4">
+                <a href="#!" class="red btn text-shadow darken-4 wave-effect">Reset</a>
+                <button type="submit" class="brown darken-3 white-text btn text-shadow">
+                    <i class="fas fa-search left"></i> Search
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
-<!-- Search box here with data showing underneath in a div -->
+
+<!-- Space for the search results to display -->
+
 
 <!-- Books that have been read in this box - Add a little explanation above it -->
 
 <div class="row">
     <div class="col s12 m8 offset-m2">
-        Section for a description of whats going on here. Profile welcome, add book link etc.
+        Consolidated Reading Lists:
     </div>
 </div>
 
@@ -50,133 +69,115 @@
                                     ISBN-13: {{ book.isbn }}
                                 </p>
 
- <!--------------------------- Edit button here, opens modal with Edit form --------------------------->
+<!--------------------------- Edit and Delete buttons here, Edit opens modal with Edit form --------------------------->
 
-                                <button data-target="modal1" class="btn modal-trigger" name="edit_book" id="modalpencil">
+                                <button data-target="modal1" class="btn modal-trigger" name="edit_book"
+                                    id="modalpencil">
                                     <i class="fas fa-pencil prefix"></i>
                                 </button>
+                                <a href="{{ url_for('delete_book', book_id=book._id) }}" class="btn-small green accent-4">
+                                    <i class="fas fa-exclamation"></i>
+                                </a>
+
+  <!--------------------------------- Edit form container --------------------------------->
                                 <div id="modal1" class="modal">
                                     <div class="modal-content">
                                         <h4>Edit Book Entry</h4>
-<!--------------------------------- Edit form container --------------------------------->
-
                                         <div class="row card-panel grey lighten-5">
-                                            Book ID - {{book._id}}
                                             <form class="col s12" method="POST"
-                                                action="{{ url_for('edit_book', username=username, books_id=book._id) }}">
-<!----------------------------- Category selection dropdown menu ----------------------------->
-
+                                                action="{{ url_for('edit_book', username=username, book_id=book._id) }}">
                                                 <div class="row">
                                                     <div class="input-field col s12">
                                                         <i class="fas fa-folder-open brown-text text-darken-3"></i>
-                                                        <select id="category_name" name="category_name" class="validate"
-                                                            required>
-                                                            <option value="" disabled selected>Choose Category</option>
+                                                        <select id="category_name" name="category_name" class="validate" required>
+                                                            <option value="" selected>Choose Category</option>
                                                             {% for category in reading_list %}
-                                                            <option value="{{ category.category_name }}">
-                                                                {{ category.category_name }}</option>
+                                                            {% if category.category_name == book.category_name %}
+                                                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                                                            {% else %}
+                                                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                                            {% endif %}
                                                             {% endfor %}
                                                         </select>
                                                         <label for="category_name">Book category</label>
                                                     </div>
                                                 </div>
-                                                <!-----------------------------  Book Title  ----------------------------->
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <i
-                                                            class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
-                                                        <input id="title" name="title" minlength="5" maxlength="50"
-                                                            type="text" class="validate" required>
+                                                        <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
+                                                        <input id="title" name="title" minlength="5" maxlength="50" type="text" class="validate"
+                                                            required>
                                                         <label for="title">Book title</label>
                                                     </div>
                                                 </div>
-                                                <!-----------------------------  Book Author  ----------------------------->
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <i
-                                                            class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
-                                                        <input id="author" name="author" minlength="5" maxlength="50"
-                                                            type="text" class="validate" required>
+                                                        <i class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
+                                                        <input id="author" name="author" minlength="5" maxlength="50" type="text" class="validate"
+                                                            required>
                                                         <label for="author">Author</label>
                                                     </div>
                                                 </div>
-                                                <!-----------------------------  Genre  ----------------------------->
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <i
-                                                            class="fas fa-masks-theatre prefix brown-text text-darken-3"></i>
-                                                        <input id="genre" name="genre" minlength="5" maxlength="50"
-                                                            type="text" class="validate" required>
+                                                        <i class="fas fa-masks-theatre prefix brown-text text-darken-3"></i>
+                                                        <input id="genre" name="genre" minlength="5" maxlength="50" type="text" class="validate"
+                                                            required>
                                                         <label for="genre">Genre</label>
                                                     </div>
                                                 </div>
-                                                <!-----------------------------  Book Rating  ----------------------------->
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <i
-                                                            class="fas fa-star-half-stroke-alt prefix brown-text text-darken-3"></i>
-                                                        <input id="rating" name="rating" minlength="5" maxlength="50"
-                                                            type="text" class="validate" required>
+                                                        <i class="fas fa-star-half-stroke-alt prefix brown-text text-darken-3"></i>
+                                                        <input id="rating" name="rating" minlength="5" maxlength="50" type="text" class="validate"
+                                                            required>
                                                         <label for="rating">Rating</label>
                                                     </div>
                                                 </div>
-                                        <!------------------------------- Release/Publication Date Picker ------------------------------->
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <i
-                                                            class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
-                                                        <input id="release_date" name="release_date" type="text"
-                                                            class="datepicker validate" required>
+                                                        <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
+                                                        <input id="release_date" name="release_date" type="text" class="datepicker validate" required>
                                                         <label for="release_date">Publication Date:</label>
                                                     </div>
                                                 </div>
-        <!------------------------------- Publisher ------------------------------->
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <i
-                                                            class="fas fa-book-alt prefix brown-text text-darken-3"></i>
-                                                        <input id="publisher" name="publisher" minlength="5"
-                                                            maxlength="50" type="text" class="validate" required>
+                                                        <i class="fas fa-book-alt prefix brown-text text-darken-3"></i>
+                                                        <input id="publisher" name="publisher" minlength="5" maxlength="50" type="text" class="validate"
+                                                            required>
                                                         <label for="publisher">Publisher</label>
                                                     </div>
                                                 </div>
-         <!------------------------------- Page Count ------------------------------->
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <i
-                                                            class="fas fa-hashtag-alt prefix brown-text text-darken-3"></i>
-                                                        <input id="page_count" name="page_count" minlength="5"
-                                                            maxlength="50" type="text" class="validate" required>
+                                                        <i class="fas fa-hashtag-alt prefix brown-text text-darken-3"></i>
+                                                        <input id="page_count" name="page_count" minlength="5" maxlength="50" type="text"
+                                                            class="validate" required>
                                                         <label for="page_count">Page Count</label>
                                                     </div>
                                                 </div>
-        <!------------------------------- ISBN-13 entry ------------------------------->
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <i
-                                                            class="fas fa-list-ol prefix brown-text text-darken-3"></i>
-                                                        <input id="isbn" name="isbn" minlength="5" maxlength="50"
-                                                            type="text" class="validate" required>
+                                                        <i class="fas fa-list-ol prefix brown-text text-darken-3"></i>
+                                                        <input id="isbn" name="isbn" minlength="5" maxlength="50" type="text" class="validate" required>
                                                         <label for="isbn">ISBN-13</label>
                                                     </div>
                                                 </div>
-<div class="modal-footer">
-        <!------------------------------- Cancel Edit Button ------------------------------->
-                                                        <a href="#!" class="btn-large red darken-3 text-shadow modal-close">
-                                                            Cancel <i class="fas fa-times-circle right"></i>
-                                                        </a>
-        <!------------------------------- Submit Changes Button ------------------------------->
-                                                        <button type="submit" class="btn-large brown darken-3 white-text text-shadow">
-                                                            Edit Book <i class="fas fa-edit right"></i>
-                                                        </button>
-                                                    </div>
+                                                <div class="modal-footer">
+                                                    <a href="#!" class="btn-large red darken-3 text-shadow modal-close">
+                                                        Cancel <i class="fas fa-times-circle right"></i>
+                                                    </a>
+                                                    <button type="submit" class="btn-large brown darken-3 white-text text-shadow">
+                                                        Edit Book <i class="fas fa-edit right"></i>
+                                                    </button>
                                                 </div>
-                                            </form>
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                        
+                        </div>
                         {% endfor %}
                     </div>
                 </div>
@@ -184,6 +185,11 @@
         </ul>
     </div>
 </div>
+
+
+
+<!-- Unread Books 
+
 <div class="row">
     <div class="col s12 m8 offset-m2 ">
         <ul class="collapsible">
@@ -209,8 +215,6 @@
                                     ISBN-13: {{ books.isbn }}
                                 </p>
 
-                                <!-- Edit button here -->
-                                <!-- Cancel also -->
                             </div>
                         </div>
                         {% endfor %}
@@ -221,5 +225,5 @@
         </ul>
     </div>
 </div>
-
+-->
 {% endblock %}

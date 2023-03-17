@@ -24,17 +24,17 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/get_books")
-def get_books():
-    books = list(mongo.db.booksread.find())
-    booksunread = list(mongo.db.bookstoberead.find())
-    return render_template(
-        "readinglist.html", booksread=books, booksunread=booksunread)
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    booksread = list(mongo.db.booksread.find({"$text": {"$search": query}}))
+    return redirect(url_for("profile", username=session["user"]))
 
+
+# ---------------- REGISTRATION AND LOGIN/LOGOUT FUNCTIONS -------------------
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    # Checking if the username input currently exists in the database
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -49,7 +49,6 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-# Putting the new user into a session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -74,12 +73,14 @@ def login():
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
-
         else:
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+# ------------------------ MAIN PROFILE PAGE ------------------------
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -88,7 +89,6 @@ def profile(username):
     unread = list(mongo.db.bookstoberead.find())
     categories = mongo.db.reading_list.find().sort("category_name", 1)
 
-    # Finding the user in the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -102,13 +102,14 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-# Removing the user from the session cookie to logout
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("index"))
 
+
+# ------------------------ ADDING AND EDITING BOOKS ------------------------
 
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
@@ -125,7 +126,6 @@ def add_book():
             "isbn": request.form.get("isbn")
             }
         mongo.db.booksread.insert_one(book)
-        mongo.db.bookstoberead.insert_one(book)
         flash("Book Successfully Added")
         return redirect(url_for("add_book"))
 
@@ -133,8 +133,8 @@ def add_book():
     return render_template("add_book.html", reading_list=bookcat)
 
 
-@app.route("/profile/<username>, <books_id>", methods=["GET", "POST"])
-def edit_book(books_id, username):
+@app.route("/profile/<username>, <book_id>", methods=["GET", "POST"])
+def edit_book(username, book_id):
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -147,21 +147,19 @@ def edit_book(books_id, username):
             "page_count": request.form.get("page_count"),
             "isbn": request.form.get("isbn")
         }
-        mongo.db.booksread.replace_one({"_id": ObjectId(books_id)}, submit, True)
-        # mongo.db.bookstoberead.update_one({"_id": ObjectId(books_id)}, submit)
+
+        book = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
+        mongo.db.booksread.replace_one({"_id": ObjectId(book_id)}, submit)
         flash("Book Entry Edited")
-
-    # unreadbooks = mongo.db.bookstoberead.find_one({"_id": ObjectId(books_id)})
-    book = mongo.db.booksread.find_one({"_id": ObjectId(books_id)})
-    categories = mongo.db.reading_list.find().sort("category_name", 1)
-
-    # return redirect(url_for("profile/<username>", booksread=book, readinglist=categories))
     return redirect(url_for("profile", username=session["user"]))
 
+    categories = mongo.db.reading_list.find().sort("category_name", 1)
+    return render_template("profile.html", booksread=book, categories=categories)
 
-@app.route("/delete_book/<books_id>")
-def delete_book(books_id):
-    mongo.db.booksread.remove({"_id": ObjectId(books_id)})
+
+@app.route("/delete_book/<book_id>")
+def delete_book(book_id):
+    mongo.db.booksread.delete_one({"_id": ObjectId(book_id)})
     flash("Book Entry Successfully Deleted")
     return redirect(url_for("profile", username=session["user"]))
 

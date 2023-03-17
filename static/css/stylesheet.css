@@ -158,5 +158,9 @@ font-family: 'Libre Baskerville', serif;
   font-family: 'Libre Baskerville', serif;;
 }
 
+i.fa-search {
+  font-size: 20px;
+}
+
 /*------------------------------------ MEDIA QUERIES ------------------------------------ */
 
