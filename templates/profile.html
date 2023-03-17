@@ -71,16 +71,18 @@
 
 <!--------------------------- Edit and Delete buttons here, Edit opens modal with Edit form --------------------------->
 
-                                <button data-target="modal1" class="btn modal-trigger" name="edit_book"
+                                <button data-target="modal-{{'edit_book' }}" class="btn modal-trigger" name="edit_book"
                                     id="modalpencil">
-                                    <i class="fas fa-pencil prefix"></i>
+                                    <a href="{{ url_for('edit_book', username=username, book_id=book._id) }}">
+                                    <i class="fas fa-pencil prefix"></i></a>
                                 </button>
-                                <a href="{{ url_for('delete_book', book_id=book._id) }}" class="btn-small green accent-4">
+                                <button data-target="modal-{{ 'delete_book' }}" class="btn modal-trigger" name="delete_book"
+                                id="modalpencil">
+                                <a href="modal-{{ 'delete_book' }}" class="btn-small green accent-4">
                                     <i class="fas fa-exclamation"></i>
-                                </a>
-
-  <!--------------------------------- Edit form container --------------------------------->
-                                <div id="modal1" class="modal">
+                                </a>                            </button>
+  <!--------------------------------- Edit form Modal --------------------------------->
+                                <div id="modal-{{ 'edit_book' }}" class="modal">
                                     <div class="modal-content">
                                         <h4>Edit Book Entry</h4>
                                         <div class="row card-panel grey lighten-5">
@@ -176,6 +178,18 @@
                                         </form>
                                     </div>
                                 </div>
+                                <!-- Delete Book Modal -->
+<div id="modal-{{ 'delete_book' }}" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+        <a href="{{ url_for('delete_book', book_id=book._id) }}" class="btn-small red accent-4">DELETE</a>
+        <a href="modal-close" class="btn-small green">Cancel</a>
+    </div>
+  </div>
+
                             </div>
                         </div>
                         {% endfor %}
@@ -185,7 +199,6 @@
         </ul>
     </div>
 </div>
-
 
 
 <!-- Unread Books 
