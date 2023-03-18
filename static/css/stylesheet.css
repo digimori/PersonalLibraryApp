@@ -59,7 +59,7 @@ body {
     font-family: 'Special Elite', serif;
   }
 
-  #welcomepanel {
+  .welcomepanel {
     margin-top: 20px;
     background-color: #524c48;
     background-image: url('/static/img/prateek-katyal-unsplash-books.jpg');
@@ -71,6 +71,23 @@ body {
 
   #loginpanel {
     border-radius: 10px;
+  }
+
+  #registrationcard {
+    background-color: #524c48;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: 'Special Elite', serif;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 1em;
+  }
+
+  h4#newtolibrary {
+font-size: 1.5em;
+font-weight: 600;
+letter-spacing: 1px;
   }
 
   div.card-panel.login {
