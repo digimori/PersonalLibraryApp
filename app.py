@@ -86,7 +86,6 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     books = list(mongo.db.booksread.find())
-    unread = list(mongo.db.bookstoberead.find())
     categories = mongo.db.reading_list.find().sort("category_name", 1)
 
     username = mongo.db.users.find_one(
@@ -96,7 +95,7 @@ def profile(username):
         return render_template(
             "profile.html",
             username=username, booksread=books,
-            bookstoberead=unread, reading_list=categories
+            reading_list=categories
             )
 
     return redirect(url_for("login"))
@@ -123,7 +122,8 @@ def add_book():
             "release_date": request.form.get("release_date"),
             "publisher": request.form.get("publisher"),
             "page_count": request.form.get("page_count"),
-            "isbn": request.form.get("isbn")
+            "isbn": request.form.get("isbn"),
+            "synopsis": request.form.get("synopsis")
             }
         mongo.db.booksread.insert_one(book)
         flash("Book Successfully Added")
@@ -145,7 +145,8 @@ def edit_book(username, book_id):
             "release_date": request.form.get("release_date"),
             "publisher": request.form.get("publisher"),
             "page_count": request.form.get("page_count"),
-            "isbn": request.form.get("isbn")
+            "isbn": request.form.get("isbn"),
+            "synopsis": request.form.get("synopsis")
         }
 
         book = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
