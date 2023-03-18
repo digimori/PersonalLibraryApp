@@ -18,7 +18,7 @@
                 <label for="category_name">Book category</label>
             </div>
         </div>
-<!------------------------------ Book title -------------------------------->
+<!------------------------------ Book Details Form -------------------------------->
         <div class="row">
             <div class="input-field col s12 formentry">
                 <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
+                <i class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
                 <input id="author" name="author" minlength="5" maxlength="50"
                     type="text" class="validate" required>
                 <label for="author">Author</label>
@@ -37,7 +37,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
+                <i class="fas fa-masks-theater prefix brown-text text-darken-3"></i>
                 <input id="genre" name="genre" minlength="5" maxlength="50"
                     type="text" class="validate" required>
                 <label for="genre">Genre</label>
@@ -45,13 +45,13 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
+                <i class="fas fa-star-half-stroke prefix brown-text text-darken-3"></i>
                 <input id="rating" name="rating" minlength="2" maxlength="5"
-                    type="text" class="validate" required>
+                    type="text" class="validate" placeholder="Out of 10, eg: 5/10" required>
                 <label for="rating">Rating</label>
             </div>
         </div>
-        <!-- Release Date Picker -->
+        <!----------------------------- Release Date Picker ----------------------------->
         <div class="row">
             <div class="input-field col s12 formentry">
                 <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
@@ -59,10 +59,9 @@
                 <label for="release_date">Publication Date:</label>
             </div>
         </div>
-
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
+                <i class="fas fa-book prefix brown-text text-darken-3"></i>
                 <input id="publisher" name="publisher" minlength="3" maxlength="15"
                     type="text" class="validate" required>
                 <label for="publisher">Publisher</label>
@@ -70,7 +69,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
+                <i class="fas fa-hashtag prefix brown-text text-darken-3"></i>
                 <input id="page_count" name="page_count" minlength="1" maxlength="5"
                     type="text" class="validate" required>
                 <label for="page_count">Page Count</label>
@@ -78,10 +77,18 @@
         </div>
         <div class="row">
             <div class="input-field col s12 formentry">
-                <i class="fas fa-list-ol prefix brown-text text-darken-3"></i>
+                <i class="fas fa-barcode prefix brown-text text-darken-3"></i>
                 <input id="isbn" name="isbn" minlength="3" maxlength="50"
                     type="text" class="validate" required>
                 <label for="isbn">ISBN-13</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 formentry">
+                <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
+                <input id="synopsis" name="synopsis" minlength="3" maxlength="350"
+                    type="text" class="validate" required>
+                <label for="synopsis">Synopsis</label>
             </div>
         </div>
 <!------------------------------ Submit Button -------------------------------->

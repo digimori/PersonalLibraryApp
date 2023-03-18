@@ -26,7 +26,7 @@ body {
     flex: 1 0 auto;
   }
 
-  /* --------------- Footer  ---------------*/
+  /* ------------------------------------ Footer  ------------------------------------ */
      
   #footertext {
     padding-bottom: 15px;
@@ -37,51 +37,7 @@ body {
     background-color: #524c48;
   }
 
-/* --------------- Buttons ---------------*/
-
-  .btn-large {
-    background-color: #524c48;
-    color: #fff;
-    border-radius: 10px;
-    font-family: 'Special Elite', serif;
-  }
-
-div.submitbutton {
-  margin-top: 10px;
-  border-radius: 10px;
-}
-
-button.btn-large {
-  border-radius: 10px;
-}
-
-.cardcontent {
-  font-size: 0.75em;
-  font-weight: 500;
-  color: white;
-  font-family: 'Libre Baskerville', serif;
-  }
-
-  div.collapsecontainer {
-    border-radius: 10px;
-  }
-
-  div.collapsible,
-  div.collapsible-body,
-  div.collapsible-header,
-  div.collapsible-container {
-    border: none;
-    box-shadow: none;
-  }
-
-  div.collapsible-header {
-    background-color: #524c48;
-  }
-
-  div.collapsible-body {
-    background-color: #dfcec2;
-    border-radius: 5px;
-  }
+/* ------------------------------------ Welcome Messages ------------------------------------ */
 
   .welcomemessage {
     color: #fff;
@@ -111,6 +67,8 @@ button.btn-large {
     border-radius: 5px;
   }
 
+  /* ------------------------------------ Login and Registration sections ------------------------------------ */
+
   #loginpanel {
     border-radius: 10px;
   }
@@ -139,6 +97,60 @@ a.white-text {
     background-color: #524c48;
   }
 
+
+
+/* ------------------------------------ Buttons ------------------------------------*/
+
+  .btn-large {
+    background-color: #524c48;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Special Elite', serif;
+  }
+
+div.submitbutton {
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+button.btn-large {
+  border-radius: 10px;
+}
+
+/* ------------------------------------ Book Entry Cards ------------------------------------ */
+
+.cardcontent {
+  font-size: 0.75em;
+  font-weight: 500;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+  }
+
+/* ------------------------------------ Collapsibles ------------------------------------ */
+
+  div.collapsecontainer {
+    border-radius: 10px;
+  }
+
+  div.collapsible,
+  div.collapsible-body,
+  div.collapsible-header,
+  div.collapsible-container {
+    border: none;
+    box-shadow: none;
+  }
+
+  div.collapsible-header {
+    background-color: #524c48;
+  }
+
+  div.collapsible-body {
+    background-color: #dfcec2;
+    border-radius: 5px;
+  }
+
+/* ------------------------------------ Forms ------------------------------------ */
+  
 div.formentry {
 margin-bottom: -20px;
 font-family: 'Libre Baskerville', serif;
@@ -150,6 +162,8 @@ font-family: 'Libre Baskerville', serif;
   color: #524c48;
 }
 
+/* ------------------------------------ Flash Messages ------------------------------------ */
+
 .flashmessage {
   font-size: 24px;
   font-weight: 600;
@@ -158,9 +172,46 @@ font-family: 'Libre Baskerville', serif;
   font-family: 'Libre Baskerville', serif;;
 }
 
-i.fa-search {
-  font-size: 20px;
+/* ------------------------------------- Book Deletion Modal ------------------------------------ */
+
+.deletebook {
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 5px;
+  box-shadow: #524c48;
+  color:#524c48;
+}
+
+#cancelbutton {
+  padding-top: 3px;
+  margin-right: 3px;
+  background-color: #524c48;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Special Elite', serif;
+}
+
+#deletebutton {
+  padding-top: 3px;
+  background-color: #a70000;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Special Elite', serif;
 }
 
 /*------------------------------------ MEDIA QUERIES ------------------------------------ */
 
+/*320x480 and 481x768:
+Search bar and buttons need to be fixed on
+Nav header needs fixing
+
+481x768:
+welcome message needs to be widened so that and login will fit the screen
+
+320x480:
+shrink welcome message and login so they fit the screen without scrolling too much
+
+1024x768:
+Search buttons need separating or making smaller
+book entry cards need to stack rather than go next to, they're too squished
+
+ALL OF THE REGISTRATION PAGE NEEDS TO BE FIXED
