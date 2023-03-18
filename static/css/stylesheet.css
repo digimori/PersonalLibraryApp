@@ -147,6 +147,7 @@ button.btn-large {
 
   div.collapsecontainer {
     border-radius: 10px;
+    margin-bottom: 10px;
   }
 
   div.collapsible,

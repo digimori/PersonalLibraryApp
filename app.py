@@ -86,7 +86,7 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     books = list(mongo.db.booksread.find())
-    categories = mongo.db.reading_list.find().sort("category_name", 1)
+    categories = list(mongo.db.reading_list.find().sort("category_name", 1))
 
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
