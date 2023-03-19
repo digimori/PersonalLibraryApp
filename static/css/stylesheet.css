@@ -37,6 +37,10 @@ body {
     background-color: #524c48;
   }
 
+  a.footerlink {
+    text-decoration: underline;
+  }
+
 /* ------------------------------------ Welcome Messages ------------------------------------ */
 
   .welcomemessage {
@@ -147,7 +151,6 @@ button.btn-large {
 
   div.collapsecontainer {
     border-radius: 10px;
-    margin-bottom: 10px;
   }
 
   div.collapsible,
@@ -220,13 +223,7 @@ font-family: 'Libre Baskerville', serif;
 
 /*320x480 and 481x768:
 Search bar and buttons need to be fixed on
-Nav header needs fixing
-
-481x768:
-welcome message needs to be widened so that and login will fit the screen
-
-320x480:
-shrink welcome message and login so they fit the screen without scrolling too much
+Nav header needs fixing for mid size
 
 1024x768:
 Search buttons need separating or making smaller

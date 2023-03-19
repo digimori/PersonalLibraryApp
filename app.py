@@ -24,11 +24,17 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/get_books")
+def get_books():
+    booksread = list(mongo.db.booksread.find())
+    return render_template("profile.html", username=session['user'], booksread=booksread)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     booksread = list(mongo.db.booksread.find({"$text": {"$search": query}}))
-    return redirect(url_for("profile", username=session["user"]))
+    return render_template("profile.html", username=session["user"], booksread=booksread)
 
 
 # ---------------- REGISTRATION AND LOGIN/LOGOUT FUNCTIONS -------------------
