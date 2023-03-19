@@ -253,6 +253,9 @@ div#welcomecontent h4 {
 div.registrationline p {
   font-size: 11px;
 }
+a.reset {
+  margin-bottom: 8px;
+}
 }
 
 /* ------ 769 x 1024-------*/
