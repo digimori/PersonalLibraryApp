@@ -147,27 +147,8 @@ button.btn-large {
   font-family: 'Libre Baskerville', serif;
 }
 
-/* ------------------------------------ Collapsibles ------------------------------------ */
-
-div.collapsecontainer {
-  border-radius: 10px;
-}
-
-div.collapsible,
-div.collapsible-body,
-div.collapsible-header,
-div.collapsible-container {
-  border: none;
-  box-shadow: none;
-}
-
-div.collapsible-header {
-  background-color: #524c48;
-}
-
-div.collapsible-body {
-  background-color: #dfcec2;
-  border-radius: 5px;
+div.bookcontentunread {
+  background-color: #a70000;
 }
 
 /* ------------------------------------ Forms ------------------------------------ */

@@ -27,17 +27,39 @@ def index():
 @app.route("/get_books")
 def get_books():
     booksread = list(mongo.db.booksread.find())
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "title": request.form.get("title"),
+            "author": request.form.get("author"),
+            "genre": request.form.get("genre"),
+            "rating": request.form.get("rating"),
+            "release_date": request.form.get("release_date"),
+            "publisher": request.form.get("publisher"),
+            "page_count": request.form.get("page_count"),
+            "isbn": request.form.get("isbn"),
+            "synopsis": request.form.get("synopsis")
+        }
+
+        book = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
+        mongo.db.booksread.replace_one({"_id": ObjectId(book_id)}, submit)
+        flash("Book Entry Edited")
+    return redirect(url_for("profile", username=session["user"]))
+
+    categories = mongo.db.reading_list.find().sort("category_name", 1)
     return render_template(
-        "profile.html", username=session['user'],
-        booksread=booksread)
+        "profile.html", booksread=book, reading_list=categories
+        )
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    categories = mongo.db.reading_list.find().sort("category_name", 1)
     query = request.form.get("query")
     booksread = list(mongo.db.booksread.find({"$text": {"$search": query}}))
+
     return render_template(
-        "profile.html", username=session["user"], booksread=booksread
+        "profile.html", username=session["user"], booksread=booksread, reading_list=categories
         )
 
 
