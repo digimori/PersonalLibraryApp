@@ -27,14 +27,18 @@ def index():
 @app.route("/get_books")
 def get_books():
     booksread = list(mongo.db.booksread.find())
-    return render_template("profile.html", username=session['user'], booksread=booksread)
+    return render_template(
+        "profile.html", username=session['user'],
+        booksread=booksread)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     booksread = list(mongo.db.booksread.find({"$text": {"$search": query}}))
-    return render_template("profile.html", username=session["user"], booksread=booksread)
+    return render_template(
+        "profile.html", username=session["user"], booksread=booksread
+        )
 
 
 # ---------------- REGISTRATION AND LOGIN/LOGOUT FUNCTIONS -------------------
@@ -161,7 +165,9 @@ def edit_book(username, book_id):
     return redirect(url_for("profile", username=session["user"]))
 
     categories = mongo.db.reading_list.find().sort("category_name", 1)
-    return render_template("profile.html", booksread=book, categories=categories)
+    return render_template(
+        "profile.html", booksread=book, categories=categories
+        )
 
 
 @app.route("/delete_book/<book_id>")

@@ -11,16 +11,16 @@
 </div>
 <br>
 <div class="row ">
-    <form action="{{ url_for('search') }}" method="post" class="col s8 offset-s2">
+    <form action="{{ url_for('search') }}" method="post" class="col s8 m9 offset-m1 offset-s2">
         <div class="row center-align">
-            <div class="input-field col s12 m8">
+            <div class="input-field col s12 m6">
                 <i class="fas fa-search prefix brown-text text-darken-3"></i>
                 <input type="text" name="query" id="query" minlength="3" class="validate" required>
                 <label for="query">Search Book Entries</label>
             </div>
-            <div class="col s12 m4">
-                <a href="{{ url_for('get_books') }}" class="red btn text-shadow darken-4 wave-effect col s12 reset">Reset</a>
-                <button type="submit" class="brown darken-3 white-text btn text-shadow col s12">
+            <div class="col s12 m6">
+                <a href="{{ url_for('get_books') }}" class="red btn text-shadow darken-4 wave-effect col s12 m5 reset">Reset</a>
+                <button type="submit" class="brown darken-3 white-text btn text-shadow col s12 m6 searchbutton">
                     <i class="fas fa-search left"></i> Search
                 </button>
             </div>
@@ -28,9 +28,7 @@
     </form>
 </div>
 
-<div class="row">
-    <div class="col s12 m8 offset-m2">
-        Search results go in here
+
         <div class="row">
             {% for book in booksread %}
             <!-- an if statement here to determine read or not depending on colour -->
@@ -167,11 +165,11 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="#!" class="btn-large red darken-3 text-shadow modal-close">
+                                        <a href="#!" class="btn-large red darken-3 text-shadow modal-close cancelmodal col s12">
                                             Cancel <i class="fas fa-times-circle right"></i>
                                         </a>
                                         <button type="submit"
-                                            class="btn-large brown darken-3 white-text text-shadow">
+                                            class="btn-large brown darken-3 white-text text-shadow col s12">
                                             Edit Book <i class="fas fa-edit right"></i>
                                         </button>
                                     </div>
@@ -197,13 +195,9 @@
             </div>
             {% endfor %}
         </div>
-    </div>
-</div>
 
-<!-- Space for the search results to display -->
 
-<!-- Books that have been read in this box - Add a little explanation above it -->
-
+<!--
 <div class="row">
     <div class="col s12 m8 offset-m2 ">
         <ul class="collapsible">
@@ -232,7 +226,7 @@
                                     <strong>Synopsis:</strong> {{ book.synopsis }}<br>
                                 </p>
 
-                                <!--------------------------- Edit and Delete buttons here, Edit opens modal with Edit form --------------------------->
+                                <-------------------------- Edit and Delete buttons here, Edit opens modal with Edit form ---------------------------
 
                                 <button data-target="modal-{{'edit_book' }}" class="btn modal-trigger brown darken-3 white-text" name="edit_book"
                                     id="modalpencil">
@@ -244,7 +238,7 @@
                                     <a href="modal-{{ 'delete_book' }}">
                                         <i class="fas fa-exclamation white-text"></i></a>
                                 </button>
-                                <!--------------------------------- Edit form Modal --------------------------------->
+                                --------------------------------- Edit form Modal ---------------------------------
                                 <div id="modal-{{ 'edit_book' }}" class="modal">
                                     <div class="modal-content">
                                         <h4>Edit Book Entry</h4>
@@ -361,7 +355,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <!-- Delete Book Modal -->
+                               
                                 <div id="modal-{{ 'delete_book' }}" class="modal deletebook">
                                     <div class="modal-content">
                                         <h4>CONTENT DELETION WARNING</h4>
@@ -383,6 +377,6 @@
             </li>
         </ul>
     </div>
-</div>
+</div>-->
 
 {% endblock %}

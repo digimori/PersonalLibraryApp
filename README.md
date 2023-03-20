@@ -1,6 +1,6 @@
 # My Personal Library app
-- [Live Preview]()
-- [Github Repository]()
+- [Live Preview](https://personal-library-mongodb.herokuapp.com/)
+- [Github Repository](https://github.com/digimori/PersonalLibraryApp)
 
 ADD A TABLE OF CONTENTS HERE
 

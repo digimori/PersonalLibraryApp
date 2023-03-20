@@ -1,133 +1,133 @@
 /* --------------- Main Body CSS  ---------------*/
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #ece8d7;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #ece8d7;
+}
 
-  .nav-wrapper {
-    background-color: #524c48;
-  }
+.nav-wrapper {
+  background-color: #524c48;
+}
 
-  .brand-logo {
-    margin: 8px 0px 2px 20px;
-  }
+.brand-logo {
+  margin: 8px 0px 2px 20px;
+}
 
-  .nav-extended {
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    font-family: 'Special Elite', serif;
-  }
+.nav-extended {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: 'Special Elite', serif;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
-  /* ------------------------------------ Footer  ------------------------------------ */
-     
-  #footertext {
-    padding-bottom: 15px;
-    font-family: 'Libre Baskerville', serif;
-  }
+/* ------------------------------------ Footer  ------------------------------------ */
 
-  footer.page-footer {
-    background-color: #524c48;
-  }
+#footertext {
+  padding-bottom: 15px;
+  font-family: 'Libre Baskerville', serif;
+}
 
-  a.footerlink {
-    text-decoration: underline;
-  }
+footer.page-footer {
+  background-color: #524c48;
+}
+
+a.footerlink {
+  text-decoration: underline;
+}
 
 /* ------------------------------------ Welcome Messages ------------------------------------ */
 
-  .welcomemessage {
-    color: #fff;
-    font-size: 1.45em;
-    font-weight: 500;
-    letter-spacing: 2px;
-    font-family: 'Special Elite', serif;
-  }
+.welcomemessage {
+  color: #fff;
+  font-size: 1.45em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-family: 'Special Elite', serif;
+}
 
-  .welcomecard {
-    margin-top: 10px;
-    border-radius: 10px;
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(82,76,72));
-  }
+.welcomecard {
+  margin-top: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(82, 76, 72));
+}
 
-  #welcomecardheader {
-    background-color: #524c48;
-    color: #fff;
-    font-family: 'Special Elite', serif;
-  }
+#welcomecardheader {
+  background-color: #524c48;
+  color: #fff;
+  font-family: 'Special Elite', serif;
+}
 
-  .welcomepanel {
-    margin-top: 20px;
-    background-color: #524c48;
-    background-image: url('/static/img/prateek-katyal-unsplash-books.jpg');
-    background-size: cover;
-    border-radius: 5px;
-  }
+.welcomepanel {
+  margin-top: 20px;
+  background-color: #524c48;
+  background-image: url('/static/img/prateek-katyal-unsplash-books.jpg');
+  background-size: cover;
+  border-radius: 5px;
+}
 
-  /* ------------------------------------ Login and Registration sections ------------------------------------ */
+/* ------------------------------------ Login and Registration sections ------------------------------------ */
 
-  #loginpanel {
-    border-radius: 10px;
-  }
+#loginpanel {
+  border-radius: 10px;
+}
 
-  #registrationcard {
-    background-color: #524c48;
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 1px;
-    font-family: 'Special Elite', serif;
-    border-radius: 10px;
-    margin-top: 10px;
-    font-size: 1em;
-  }
+#registrationcard {
+  background-color: #524c48;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: 'Special Elite', serif;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 1em;
+}
 
-  h4#newtolibrary {
-font-size: 1.5em;
-font-weight: 600;
-letter-spacing: 1px;
-  }
+h4#newtolibrary {
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
 
-  div.card-panel.login {
-    border-radius: 20px;
-  }
+div.card-panel.login {
+  border-radius: 20px;
+}
 
-  div.card-panel.bookcontent {
-    border-radius: 20px;
-    background-color: #524c48;
-  }
+div.card-panel.bookcontent {
+  border-radius: 20px;
+  background-color: #524c48;
+}
 
 a.white-text {
   text-decoration: underline;
 }
 
-  .account {
-    font-weight: 700;
-    font-family: 'Libre Baskerville', serif;
-    color:#fff;
-  }
+.account {
+  font-weight: 700;
+  font-family: 'Libre Baskerville', serif;
+  color: #fff;
+}
 
-  .registrationline {
-    margin-top: 50px;
-    background-color: #524c48;
-  }
+.registrationline {
+  margin-top: 50px;
+  background-color: #524c48;
+}
 
 
 
 /* ------------------------------------ Buttons ------------------------------------*/
 
-  .btn-large {
-    background-color: #524c48;
-    color: #fff;
-    border-radius: 10px;
-    font-family: 'Special Elite', serif;
-  }
+.btn-large {
+  background-color: #524c48;
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Special Elite', serif;
+}
 
 div.submitbutton {
   margin-top: 10px;
@@ -145,36 +145,36 @@ button.btn-large {
   font-weight: 500;
   color: white;
   font-family: 'Libre Baskerville', serif;
-  }
+}
 
 /* ------------------------------------ Collapsibles ------------------------------------ */
 
-  div.collapsecontainer {
-    border-radius: 10px;
-  }
+div.collapsecontainer {
+  border-radius: 10px;
+}
 
-  div.collapsible,
-  div.collapsible-body,
-  div.collapsible-header,
-  div.collapsible-container {
-    border: none;
-    box-shadow: none;
-  }
+div.collapsible,
+div.collapsible-body,
+div.collapsible-header,
+div.collapsible-container {
+  border: none;
+  box-shadow: none;
+}
 
-  div.collapsible-header {
-    background-color: #524c48;
-  }
+div.collapsible-header {
+  background-color: #524c48;
+}
 
-  div.collapsible-body {
-    background-color: #dfcec2;
-    border-radius: 5px;
-  }
+div.collapsible-body {
+  background-color: #dfcec2;
+  border-radius: 5px;
+}
 
 /* ------------------------------------ Forms ------------------------------------ */
-  
+
 div.formentry {
-margin-bottom: -20px;
-font-family: 'Libre Baskerville', serif;
+  margin-bottom: -20px;
+  font-family: 'Libre Baskerville', serif;
 }
 
 #modalpencil {
@@ -190,7 +190,8 @@ font-family: 'Libre Baskerville', serif;
   font-weight: 600;
   letter-spacing: 2px;
   color: #524c48;
-  font-family: 'Libre Baskerville', serif;;
+  font-family: 'Libre Baskerville', serif;
+  ;
 }
 
 /* ------------------------------------- Book Deletion Modal ------------------------------------ */
@@ -198,25 +199,24 @@ font-family: 'Libre Baskerville', serif;
 .deletebook {
   font-family: 'Libre Baskerville', serif;
   border-radius: 5px;
-  box-shadow: #524c48;
-  color:#524c48;
+  color: #524c48;
 }
 
 #cancelbutton {
   padding-top: 3px;
   margin-right: 3px;
   background-color: #524c48;
-    color: #fff;
-    border-radius: 10px;
-    font-family: 'Special Elite', serif;
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Special Elite', serif;
 }
 
 #deletebutton {
   padding-top: 3px;
   background-color: #a70000;
-    color: #fff;
-    border-radius: 10px;
-    font-family: 'Special Elite', serif;
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Special Elite', serif;
 }
 
 /*------------------------------------ MEDIA QUERIES ------------------------------------ */
@@ -239,31 +239,65 @@ ALL OF THE REGISTRATION PAGE NEEDS TO BE FIXED
     position: relative;
     font-size: 1.2rem;
     padding-right: 40px;
-  margin: 0;
+    margin: 0;
+  }
+
+  #welcomecardheader {
+    font-family: 'Special Elite', serif;
+    padding: 0px;
+  }
+
+  div#welcomecontent h4 {
+    font-size: 1.75rem;
+    line-height: 100%;
+    margin: 1.52rem 0 0.912rem 0;
+  }
+
+  div.registrationline p {
+    font-size: 11px;
+  }
+
+  a.reset {
+    margin-bottom: 8px;
+  }
 }
-#welcomecardheader {
-  font-family: 'Special Elite', serif;
-  padding: 0px;
+
+@media screen and (min-width: 480px) and (max-width: 700px) {
+  nav a.brand-logo {
+    position: relative;
+    font-size: 2rem;
+    padding-right: 40px;
+    margin: 0;
+  }
+
+  a.reset {
+    margin-bottom: 8px;
+  }
 }
-div#welcomecontent h4 {
-  font-size: 1.75rem;
-  line-height: 100%;
-  margin: 1.52rem 0 0.912rem 0;
+
+@media screen and (min-width: 600px) and (max-width: 750px) {
+  button.searchbutton {
+    width: 0%;
+  }
 }
-div.registrationline p {
-  font-size: 11px;
-}
-a.reset {
-  margin-bottom: 8px;
-}
-}
+
+
 
 /* ------ 769 x 1024-------*/
 
 @media screen and (min-width:769px) and (max-width: 1024px) {
-div#welcomecardheader,
-form#loginform {
-  width: 50%;
-  margin-left: 25%;
+
+  div#welcomecardheader,
+  form#loginform,
+  div#registrationcard,
+  form#registerform {
+    width: 50%;
+    margin-left: 25%;
+  }
 }
-} 
+
+@media screen and (min-width:1025px) {
+  a.reset {
+    margin-right: 2px;
+  }
+}
