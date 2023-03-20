@@ -4,11 +4,15 @@
 
 ADD A TABLE OF CONTENTS HERE
 
+### About the Project:
+
+### Technologies used:
+
 ### Developer Goals:
 As a developer, I wanted to build an app that could store data for a user in regards to their reading list. 
 I want them to have a profile page which can be accessed via a login landing page and make it easy to navigate their way around adding, editing and deleting books to their reading list to keep track of books that they want to read and have read.
 I also want the lists themselves to be displayed alphabetically in order to make it easier to find titles. 
-I want the database to be searcheable to find the book the user wants by title, author or by whether or not it has been read.
+I want the database to be searcheable to find the book the user wants by title, author or by whether or not it has been read and to display the results to the user.
 
 
 ### User Stories:
@@ -17,16 +21,25 @@ I want the database to be searcheable to find the book the user wants by title, 
 - I want to be able to easily add, edit and delete books from my Reading List profile and be in control of which categories they are listed in.
 
 
-### Design Choices (Fonts, Colours and images, collapsibles, cards and hamburger menus):
+### Design Choices (Fonts, Colours and images, cards and hamburger menus):
 
 #### Font and Colours:
+- For the fonts, I chose and mix of "Libre Baskerville" and "Special Elite". The choices for these were ease of use for reading and because they represent the styles put on antique books and type-writers. This was to match up with the overall theme of a library and to match the login/registration cover image of antique style library books.
+
+- For the colours, I wanted to keep it muted, partly due to personal preferences and because it is easier to read. I wanted to limit eye strain and so avoided using pure whites and blacks and opted for greys, neutral beiges and browns instead. 
+
+- The home page login and registration pages are backed with [this image]() from Unsplash, I chose it as it fit the library theme without being too busy or distracting. 
+
+- For the Book entries, I chose to use cards through Materialize CSS. This provided a convenient, easily scalable and responsive method to display the information about each book entry to the user and customize it with edit and delete buttons. 
+
+- The Navigation bar collapses into a hamburger menu on smaller screen sizes in order to not take up too much space. 
 
 #### Wireframes:
 - Wireframes (FIGMA) - Desktop, Tablet, Mobile
 
 ### Database Schema:-
 
- Database schema (To Read):
+ Database schema (Books to Read):
     - Title
     - Author
     - Genre
@@ -36,7 +49,7 @@ I want the database to be searcheable to find the book the user wants by title, 
     - Page Count
     - Synopsis (TextArea)
 
-- Database Schema (Read):
+- Database Schema (Books that have been Read):
     - Title
     - Author
     - Genre
@@ -47,17 +60,29 @@ I want the database to be searcheable to find the book the user wants by title, 
     - Page Count
     - Synopsis (TextArea)
 
+- I have ensured that the "Rating" input field, though part of both forms, is not required, so that when adding an un-read book, you do not need to add the star-rating to it straight away and can be added later. 
+- The categories are separated into "To_read" and "Read" to indicate whether or not the books have been read whilst maintaining a collated database on the back-end through MongoDB. 
+
 
 ### Features
+
+#### Login/Logout/Register
+
+The login and registration pages are almost the same in an attempt to keep consistency across the app.
+I chose to provide a welcome message, a login form and a navigation beneath the form depending on if you are signing up or registering. 
+
+Once logged in, the navigation bar at the top will appear to provide the user with ways to add books and view their profile. 
+There is also a "Logout" button, which will end the user session and log them out of the app, returning to the index page login screen.
+
+[image]
+
+
+
+#### Profile
+
 Pages post-login:
 - Profile
     - Display reading (to-read) list
-
-- Reading list (dropdown menu in nav-bar)
-    - (Get/View) To read
-    - (Get/View) Read
-
-
 
 
 - Add, Edit pages for each category
@@ -65,16 +90,14 @@ Pages post-login:
     - Defensive program this with a Javascript modal
 
 
-
-#### Login/Logout/Register
-
-#### Profile
-    
 #### Adding books
 
 #### Editing books
 
+- Modal implementing
+
 #### Deleting
+- Modal implementing - defensive programming
 
 
 
@@ -94,37 +117,32 @@ Pages post-login:
 
 #### Github into Gitpod/Local Code Editor/IDE:
 
-To deploy and run locally via an IDE:
+#### To deploy and run locally via an IDE:
 
-Use the Chrome browser
-Create a Gitpod account at this link
-Download and install the Gitpod browser extension for Google Chrome.
-Restart browser after installation has completed.
-Log into Gitpod using your Github username and password. (If you don't already have a GitHub account, create one here
-Navigate into your desired Gitpod repository (This project's repository can be found both at the top of this README, and here
-Click the green "Gitpod" button on the top right of the repository file section.
-This will open the project into a Gitpod workspace and can then be worked on in a local setting, such as VSCode.
+- Use the Chrome browser
+- Create a Gitpod account at [this link](https://www.gitpod.io/)
+- Download and install the Gitpod browser extension for Google Chrome.
+- Restart browser after installation has completed.
+- Log into Gitpod using your Github username and password. If you don't already have a GitHub account, [create one here](https://github.com/signup?source=login)
+- Navigate into your desired Gitpod repository 
+- This project's repository can be found both at the top of this README, [and here](https://github.com/digimori/PersonalLibraryApp)
+- Click the green "Gitpod" button on the top right of the repository file section.
+[image goes here]
 
-Clone and Fork:
+- This will open the project into a Gitpod workspace and can then be worked on in a local setting, such as VSCode.
 
-Follow This link back to the Github project respository.
-Select the menu item above the repository files labelled "Code".
-To clone: Select the appropriate url or open to Git Desktop.
-To view on a web IDE: Click the dropdown labelled "Open in Web IDE" on the top right of the repository, and choose the appropriate IDE.
-This dropdown can also be used to clone the code into VSCode IDE.
-To clone into the Local IDE - in the terminal, type 'git clone' followed by the URL that can be copied from the aforementioned Code URL.
-To fork - Follow the instructions as outlined in the Github Docs here.
-To Deploy the respoitory to Github pages:
+#### Clone and Fork:
 
-Open the Github repository here
-Click the 'Settings' tab above the repository.
-In the side bar to the left, click on "Pages".
-Under "Build and Deployment", select the "Deploy from branch" under the "Source" tab.
-In the "Branch" drop-down below, select the '/main' branch and click save.
-This should create an accessible page once it has refreshed.
-Follow steps 1-3 again to find the deployed page, which will now be above the "Build and Deployment" section.
+-Follow [This link](https://github.com/digimori/PersonalLibraryApp) back to the Github project respository.
+- Select the menu item above the repository files labelled "Code".
+- To clone: Select the appropriate url or open to Git Desktop.
+- To view on a web IDE: Click the dropdown labelled "Open in Web IDE" on the top right of the repository, and choose the appropriate IDE.
+- This dropdown can also be used to clone the code into VSCode IDE.
+- To clone into the Local IDE - in the terminal, type 'git clone' followed by the URL that can be copied from the aforementioned Code URL.
+- To fork - Follow the instructions as outlined in the Github Docs here.
 
-#### Heroku
+
+#### To deploy to Heroku:
 
 
 ### Credits
