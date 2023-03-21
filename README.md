@@ -34,8 +34,12 @@ I want the database to be searcheable to find the book the user wants by title, 
 
 - The Navigation bar collapses into a hamburger menu on smaller screen sizes in order to not take up too much space. 
 
-#### Wireframes:
-- Wireframes (FIGMA) - Desktop, Tablet, Mobile
+### Wireframes (Adobe Photoshop):
+####  Desktop, Tablet, Mobile
+
+- Index page (Not Logged in and Registration page are laid out the same):
+![Index - Not logged in/Registration](/readmeimages/Wireframesprelogin.jpg)
+
 
 ### Database Schema:-
 
@@ -93,12 +97,12 @@ Pages post-login:
 #### Adding books
 
 #### Editing books
+- For the Editing books, I choose to implement a modal, so that there is no need to navigate back and fourth between separate pages. 
+- The modal can be cancelled by tapping the cancel button, or by tapping anywhere outside of the modal.
+- The editing also allows the user to change the category of the book from "Books to Read" to "Books Read" once they have been completed. 
 
-- Modal implementing
-
-#### Deleting
-- Modal implementing - defensive programming
-
+#### Deleting Books
+- I chose to implement a modal for deleting of book entries to implement defensive programming. This ensures that the user is aware that this is an action that cannot be reverse and making sure that they are happy to proceed with the deletion.
 
 
 ### Navigation
@@ -149,3 +153,9 @@ Pages post-login:
 #### Code bases and libraries
     - I kept a fair few bits of code from the mini project surrounding the login/register functionality to maintain securite measures and validation
     - Unsplash image for background (find the link)
+
+
+| Syntax | Description | Description |
+| ----------- | ----------- | ----------- |
+| Header | Title | Title |
+| Paragraph | Text | Text |
