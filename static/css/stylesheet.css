@@ -118,8 +118,6 @@ a.white-text {
   background-color: #524c48;
 }
 
-
-
 /* ------------------------------------ Buttons ------------------------------------*/
 
 .btn-large {
@@ -138,6 +136,24 @@ button.btn-large {
   border-radius: 10px;
 }
 
+/* ------------------------------------ How To Sections ------------------------------------ */
+
+div.explanation {
+  background-color: #524c48;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 0.8em;
+  font-family: 'Libre Baskerville', serif;
+}
+
+h5.howto {
+  font-weight: 500;
+  font-size: 2em;
+  font-family: 'Special Elite', serif;
+  color:#fff;
+}
+
 /* ------------------------------------ Book Entry Cards ------------------------------------ */
 
 .cardcontent {
@@ -148,7 +164,8 @@ button.btn-large {
 }
 
 div.bookcontentunread {
-  background-color: #a70000;
+  background-color: #618C97;
+  border-radius: 10px;
 }
 
 /* ------------------------------------ Forms ------------------------------------ */
@@ -164,15 +181,8 @@ div.formentry {
   color: #524c48;
 }
 
-/* ------------------------------------ Flash Messages ------------------------------------ */
-
-.flashmessage {
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: #524c48;
+.modal-content {
   font-family: 'Libre Baskerville', serif;
-  ;
 }
 
 /* ------------------------------------- Book Deletion Modal ------------------------------------ */
@@ -200,17 +210,18 @@ div.formentry {
   font-family: 'Special Elite', serif;
 }
 
+/* ------------------------------------ Flash Messages ------------------------------------ */
+
+.flashmessage {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #524c48;
+  font-family: 'Libre Baskerville', serif;
+  ;
+}
+
 /*------------------------------------ MEDIA QUERIES ------------------------------------ */
-
-/*320x480 and 481x768:
-Search bar and buttons need to be fixed on
-Nav header needs fixing for mid size
-
-1024x768:
-Search buttons need separating or making smaller
-book entry cards need to stack rather than go next to, they're too squished
-
-ALL OF THE REGISTRATION PAGE NEEDS TO BE FIXED
 
 /* Index page - 320px x 480px /*
 */
@@ -253,12 +264,6 @@ ALL OF THE REGISTRATION PAGE NEEDS TO BE FIXED
 
   a.reset {
     margin-bottom: 8px;
-  }
-}
-
-@media screen and (min-width: 600px) and (max-width: 750px) {
-  button.row .col.m6.searchbutton {
-    width: 0%;
   }
 }
 

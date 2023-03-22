@@ -23,6 +23,8 @@
 
 ### About the Project:
 ---
+My project is designed to be a personal library app in where I can store, edit and delete data in regards to my book collection.    
+I wanted it to be an easily accessible, no particular bells and whistles approach, for simplicity, but also locked behind a login function.
 
 ### Technologies used:
 ---
@@ -52,7 +54,8 @@ I want the database to be searcheable to find the book the user wants by title, 
 #### Font and Colours:
 - For the fonts, I chose and mix of "Libre Baskerville" and "Special Elite". The choices for these were ease of use for reading and because they represent the styles put on antique books and type-writers. This was to match up with the overall theme of a library and to match the login/registration cover image of antique style library books.
 
-- For the colours, I wanted to keep it muted, partly due to personal preferences and because it is easier to read. I wanted to limit eye strain and so avoided using pure whites and blacks and opted for greys, neutral beiges and browns instead. 
+- For the colours, I wanted to keep it muted, partly due to personal preferences and because it is easier to read. I wanted to limit eye strain and so avoided using pure whites and blacks and opted for greys, neutral beiges and browns instead.     
+I also chose to use a cold colour for the "Unread books" cards over warm, as I realised, with browns and reds together, this is not going to be user friendly to people with colour-blindness, so opted for blue to distinguish from the red.
 
 - The home page login and registration pages are backed with [this image]() from Unsplash, I chose it as it fit the library theme without being too busy or distracting. 
 
@@ -115,7 +118,7 @@ I chose to provide a welcome message, a login form and a navigation beneath the 
 Once logged in, the navigation bar at the top will appear to provide the user with ways to add books and view their profile. 
 There is also a "Logout" button, which will end the user session and log them out of the app, returning to the index page login screen.
 
-[image]
+![image]()
 
 
 
@@ -156,8 +159,8 @@ Pages post-login:
 | ----------- | ----------- | ----------- |
 | Login Form | I expect the form to recognize my login credentials and create a session to login to my profile | Pass |
 | Registration Form | I expect the form to register a new user to the database, whilst checking if the username is taken or not. | Pass |
-| Add Book Form| Title | Title |
-| Edit Book Button | Text | Text |
+| Add Book Form| I expect to be able to fill the details of books for my database onto a form, that will then submit the data and allow it to be pulled onto cards that are set out on the profile page. | Pass |
+| Edit Book Button | When clicked, I want the edit book button to open a modal containing a form for editing the entry.   I then want this form to directly edit the entry and submit the data to the database.  | FAIL - Needs fixing |
 | Delete Book | Title | Title |
 | Delete Modal | Text | Text |
 | Logout | Title | Title |

@@ -95,13 +95,12 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
+            if check_password_hash(existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -180,13 +179,13 @@ def edit_book(username, book_id):
             "isbn": request.form.get("isbn"),
             "synopsis": request.form.get("synopsis")
         }
-        mongo.db.booksread.replace_one({"_id": ObjectId(book_id)}, submit)
-        book = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
 
+        book = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
+        mongo.db.booksread.replace_one({"_id": ObjectId(book_id)}, submit)
+        categories = mongo.db.reading_list.find().sort("category_name", 1)
         flash("Book Entry Edited")
     return redirect(url_for("profile", username=session["user"]))
 
-    categories = mongo.db.reading_list.find().sort("category_name", 1)
     return render_template(
         "profile.html", booksread=book, reading_list=categories
         )
