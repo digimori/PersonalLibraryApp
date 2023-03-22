@@ -67,6 +67,11 @@ I want the database to be searcheable to find the book the user wants by title, 
 - Index page (Not Logged in and Registration page are laid out the same):
 ![Index - Not logged in/Registration](/readmeimages/Wireframesprelogin.jpg)
 
+- Profile Page (Once Logged in, cannot be accessed prior to login):
+![Profile - Logged in](/readmeimages/Profilepagewireframe.jpg)
+
+- Add-Book page (User must be logged in):
+![Add Book](/readmeimages/addbookpage.jpg)
 
 ***
 
@@ -149,8 +154,8 @@ Pages post-login:
 
 | Test | Expectation | Pass/Fail |
 | ----------- | ----------- | ----------- |
-| Login Form | Title | Title |
-| Registration Form | Text | Text |
+| Login Form | I expect the form to recognize my login credentials and create a session to login to my profile | Pass |
+| Registration Form | I expect the form to register a new user to the database, whilst checking if the username is taken or not. | Pass |
 | Add Book Form| Title | Title |
 | Edit Book Button | Text | Text |
 | Delete Book | Title | Title |
@@ -165,7 +170,13 @@ Pages post-login:
 ---
 [AmIResponsive](https://ui.dev/amiresponsive?url=https://personal-library-mongodb.herokuapp.com/)
 ![Image for AmIResponsive](/readmeimages/Amiresponsivelibraryapp.png)
+
 #### Media Queries
+
+I used the Chrome Dev tools to implement changes in real time before performing a final commit on the code itself.  
+This was also used to test the responsiveness as I could change the breakpoints as I edited each line of code.
+
+
 #### Bugs and Fixes
 
 ### Deployment (Github and Heroku):
@@ -204,6 +215,7 @@ Pages post-login:
 ### Credits
 ---     
 
-#### Code bases and libraries
-    - I kept a fair few bits of code from the mini project surrounding the login/register functionality to maintain securite measures and validation
+#### Code and libraries
+    - I kept a fair few bits of code from the mini project surrounding the login/register functionality to maintain securite measures and validation.
     - Unsplash image for background (find the link)
+    - Materialize(CSS)

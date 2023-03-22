@@ -257,7 +257,7 @@ ALL OF THE REGISTRATION PAGE NEEDS TO BE FIXED
 }
 
 @media screen and (min-width: 600px) and (max-width: 750px) {
-  button.searchbutton {
+  button.row .col.m6.searchbutton {
     width: 0%;
   }
 }

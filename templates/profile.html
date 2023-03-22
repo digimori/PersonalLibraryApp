@@ -18,7 +18,7 @@
                 <input type="text" name="query" id="query" minlength="2" class="validate" required>
                 <label for="query">Search Book Entries</label>
             </div>
-            <div class="col s12 m6">
+            <div class="col s12 m8 l6">
                 <a href="{{ url_for('get_books') }}"
                     class="red btn text-shadow darken-4 wave-effect col s12 m5 reset">Reset</a>
                 <button type="submit" class="brown darken-3 white-text btn text-shadow col s12 m6 searchbutton">
@@ -49,7 +49,7 @@
                 <strong>Synopsis:</strong> {{ book.synopsis }}<br>
             </p>
 
-            <!--------------------------- Edit and Delete buttons here, Edit opens modal with Edit form --------------------------->
+            <!-- Edit and Delete buttons here, Edit opens modal with Edit form --------------------------->
 
             <button data-target="modal-{{'edit_book' }}" class="btn modal-trigger brown darken-3 white-text"
                 name="edit_book" id="modalpencil">
@@ -61,7 +61,7 @@
                 <a href="modal-{{ 'delete_book' }}">
                     <i class="fas fa-exclamation white-text"></i></a>
             </button>
-            <!--------------------------------- Edit form Modal --------------------------------->
+            <!-- Edit form Modal --------------------------------->
             <div id="modal-{{ 'edit_book' }}" class="modal">
                 <div class="modal-content">
                     <h4>Edit Book Entry</h4>
@@ -203,7 +203,7 @@
                 <strong>Synopsis:</strong> {{ book.synopsis }}<br>
             </p>
 
-            <!--------------------------- Edit and Delete buttons here, Edit opens modal with Edit form --------------------------->
+            <!-- Edit and Delete buttons here, Edit opens modal with Edit form --------------------------->
 
             <button data-target="modal-{{'edit_book' }}" class="btn modal-trigger brown darken-3 white-text"
                 name="edit_book" id="modalpencil">
@@ -215,7 +215,7 @@
                 <a href="modal-{{ 'delete_book' }}">
                     <i class="fas fa-exclamation white-text"></i></a>
             </button>
-            <!--------------------------------- Edit form Modal --------------------------------->
+            <!-- Edit form Modal --------------------------------->
             <div id="modal-{{ 'edit_book' }}" class="modal">
                 <div class="modal-content">
                     <h4>Edit Book Entry</h4>
