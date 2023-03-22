@@ -2,13 +2,33 @@
 - [Live Preview](https://personal-library-mongodb.herokuapp.com/)
 - [Github Repository](https://github.com/digimori/PersonalLibraryApp)
 
-ADD A TABLE OF CONTENTS HERE
+***
+
+### Table of Contents  
+- [About The Project](#about-the-project)  
+- [Technologies Used](#technologies-used)   
+- [Developer Goals](#developer-goals)
+- [User Stories](#user-stories)
+- [Design Choices](#design-choices-fonts-colours-and-images-cards-and-hamburger-menus)
+- [Wireframes](#wireframes-adobe-photoshop)
+- [Database Schema](#database-schema)
+- [Features](#features)
+- [Navigation](#navigation)
+- [Testing And Validation](#testing-and-validation)
+- [Deployment](#deployment-github-and-heroku)
+- [Credits](#credits)
+
+
+***
 
 ### About the Project:
+---
 
 ### Technologies used:
+---
 
 ### Developer Goals:
+---
 As a developer, I wanted to build an app that could store data for a user in regards to their reading list. 
 I want them to have a profile page which can be accessed via a login landing page and make it easy to navigate their way around adding, editing and deleting books to their reading list to keep track of books that they want to read and have read.
 I also want the lists themselves to be displayed alphabetically in order to make it easier to find titles. 
@@ -16,13 +36,14 @@ I want the database to be searcheable to find the book the user wants by title, 
 
 
 ### User Stories:
+---
 - As a user of this app, I want to be able to log in from the landing page into a profile where my reading list will be stored.
 - I want to be able to seperate my books into "Read" and "To Read" categories for easy browsing, and be able to search by Author or Title.
 - I want to be able to easily add, edit and delete books from my Reading List profile and be in control of which categories they are listed in.
 
 
 ### Design Choices (Fonts, Colours and images, cards and hamburger menus):
-
+---
 #### Font and Colours:
 - For the fonts, I chose and mix of "Libre Baskerville" and "Special Elite". The choices for these were ease of use for reading and because they represent the styles put on antique books and type-writers. This was to match up with the overall theme of a library and to match the login/registration cover image of antique style library books.
 
@@ -35,40 +56,46 @@ I want the database to be searcheable to find the book the user wants by title, 
 - The Navigation bar collapses into a hamburger menu on smaller screen sizes in order to not take up too much space. 
 
 ### Wireframes (Adobe Photoshop):
+---
 ####  Desktop, Tablet, Mobile
 
 - Index page (Not Logged in and Registration page are laid out the same):
 ![Index - Not logged in/Registration](/readmeimages/Wireframesprelogin.jpg)
 
 
+***
+
 ### Database Schema:-
+---
 
- Database schema (Books to Read):
-    - Title
-    - Author
-    - Genre
-    - Release Date
-    - Publisher
-    - ISBN-13
-    - Page Count
-    - Synopsis (TextArea)
+Database schema (Books to Read):
+- Title
+- Author
+- Genre
+- Release Date
+- Publisher
+- ISBN-13
+- Page Count
+- Synopsis (TextArea)
 
-- Database Schema (Books that have been Read):
-    - Title
-    - Author
-    - Genre
-    - Rating 
-    - Release Date
-    - Publisher
-    - ISBN-13
-    - Page Count
-    - Synopsis (TextArea)
+Database Schema (Books that have been Read):
+- Title
+- Author
+- Genre
+- Rating 
+- Release Date
+- Publisher
+- ISBN-13
+- Page Count
+- Synopsis (TextArea)
 
-- I have ensured that the "Rating" input field, though part of both forms, is not required, so that when adding an un-read book, you do not need to add the star-rating to it straight away and can be added later. 
-- The categories are separated into "To_read" and "Read" to indicate whether or not the books have been read whilst maintaining a collated database on the back-end through MongoDB. 
+
+I have ensured that the "Rating" input field, though part of both forms, is not required, so that when adding an un-read book, you do not need to add the star-rating to it straight away and can be added later.   
+The categories are separated into "To_read" and "Read" to indicate whether or not the books have been read whilst maintaining a collated database on the back-end through MongoDB. 
 
 
 ### Features
+---
 
 #### Login/Logout/Register
 
@@ -106,10 +133,11 @@ Pages post-login:
 
 
 ### Navigation
-
+---
 
 
 ### Testing and Validation:
+--- 
 
 #### Validation (HTML, CSS, JSHint, Python PEP8)
 #### Manual (Tables, Test-Pass)
@@ -118,6 +146,7 @@ Pages post-login:
 #### Bugs and Fixes
 
 ### Deployment (Github and Heroku):
+---
 
 #### Github into Gitpod/Local Code Editor/IDE:
 
@@ -150,6 +179,8 @@ Pages post-login:
 
 
 ### Credits
+---     
+
 #### Code bases and libraries
     - I kept a fair few bits of code from the mini project surrounding the login/register functionality to maintain securite measures and validation
     - Unsplash image for background (find the link)
