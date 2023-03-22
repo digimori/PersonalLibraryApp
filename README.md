@@ -26,6 +26,11 @@
 
 ### Technologies used:
 ---
+- HTML (Flask Frameworks)
+- CSS (Materialize library)
+- JavaScript (jQuery)
+- Python3 (Back-end application)
+- MongoDB (Non-Relational Database)
 
 ### Developer Goals:
 ---
@@ -141,7 +146,25 @@ Pages post-login:
 
 #### Validation (HTML, CSS, JSHint, Python PEP8)
 #### Manual (Tables, Test-Pass)
+
+| Test | Expectation | Pass/Fail |
+| ----------- | ----------- | ----------- |
+| Login Form | Title | Title |
+| Registration Form | Text | Text |
+| Add Book Form| Title | Title |
+| Edit Book Button | Text | Text |
+| Delete Book | Title | Title |
+| Delete Modal | Text | Text |
+| Logout | Title | Title |
+| Search | Text | Text |
+| Reset Search | Title | Title |
+| Edit Searched Book | Text | Text |
+| Delete Searched Book | Title | Title |
+
 #### Amiresponsive
+---
+[AmIResponsive](https://ui.dev/amiresponsive?url=https://personal-library-mongodb.herokuapp.com/)
+![Image for AmIResponsive](/readmeimages/Amiresponsivelibraryapp.png)
 #### Media Queries
 #### Bugs and Fixes
 
@@ -184,9 +207,3 @@ Pages post-login:
 #### Code bases and libraries
     - I kept a fair few bits of code from the mini project surrounding the login/register functionality to maintain securite measures and validation
     - Unsplash image for background (find the link)
-
-
-| Syntax | Description | Description |
-| ----------- | ----------- | ----------- |
-| Header | Title | Title |
-| Paragraph | Text | Text |
