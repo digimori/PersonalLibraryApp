@@ -135,6 +135,7 @@ Pages post-login:
 
 
 #### Adding books
+- To add books, I implemented a form, asking for the user to input data, that will then be stored and pushed onto cards that they will be able to see on the profile page.
 
 #### Editing books
 - For the Editing books, I choose to implement a modal, so that there is no need to navigate back and fourth between separate pages. 
@@ -146,7 +147,12 @@ Pages post-login:
 
 
 ### Navigation
----
+--- MAYBE TABLE THIS
+Profile - 
+Add Book - 
+Logout - 
+
+Index - Login and Registration
 
 
 ### Testing and Validation:
@@ -161,9 +167,9 @@ Pages post-login:
 | Registration Form | I expect the form to register a new user to the database, whilst checking if the username is taken or not. | Pass |
 | Add Book Form| I expect to be able to fill the details of books for my database onto a form, that will then submit the data and allow it to be pulled onto cards that are set out on the profile page. | Pass |
 | Edit Book Button | When clicked, I want the edit book button to open a modal containing a form for editing the entry.   I then want this form to directly edit the entry and submit the data to the database.  | FAIL - Needs fixing |
-| Delete Book | Title | Title |
-| Delete Modal | Text | Text |
-| Logout | Title | Title |
+| Delete Book | When clicked, I expect a modal to open, confirming if I want the entry to be deleted and not directly delete on press. | Pass |
+| Delete Modal | I want the delete modal to open when the Delete button is pressed, giving the user the option to delete the entry, or cancel the operation | Pass |
+| Logout | When the logout button is pressed, I want the session cookie to be removed from the user in order to log the user out. | Pass |
 | Search | Text | Text |
 | Reset Search | Title | Title |
 | Edit Searched Book | Text | Text |

@@ -180,14 +180,14 @@ def edit_book(username, book_id):
             "synopsis": request.form.get("synopsis")
         }
 
-        book = mongo.db.booksread.find_one({"_id": ObjectId(book_id)})
-        mongo.db.booksread.replace_one({"_id": ObjectId(book_id)}, submit)
+        book = mongo.db.booksread.find({"_id": ObjectId(book_id)}, submit)
+        mongo.db.booksread.replace_one({"_id": ObjectId(book_id)}, submit, True)
         categories = mongo.db.reading_list.find().sort("category_name", 1)
         flash("Book Entry Edited")
     return redirect(url_for("profile", username=session["user"]))
 
     return render_template(
-        "profile.html", booksread=book, reading_list=categories
+        "profile.html", book=book, reading_list=categories
         )
 
 

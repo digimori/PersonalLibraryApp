@@ -59,18 +59,17 @@
 
             <!-- Edit and Delete buttons here, Edit opens modal with Edit form -->
 
-            <button data-target="modal-{{'edit_book' }}" class="btn modal-trigger brown darken-3 white-text"
+            <button data-target="modal-edit-{{'edit_book' }}" class="btn modal-trigger brown darken-3 white-text"
                 name="edit_book" id="modalpencil">
                 <a href="{{ url_for('edit_book', username=username, book_id=book._id) }}">
                     <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i></a>
             </button>
-            <button data-target="modal-{{ 'delete_book' }}" class="btn modal-trigger red darken-4 white-text"
+            <button data-target="modal-delete{{ book._id }}" class="btn modal-trigger red darken-4 white-text"
                 name="delete_book" id="modalpencil">
-                <a href="modal-{{ 'delete_book' }}">
-                    <i class="fas fa-exclamation white-text"></i></a>
+                    <i class="fas fa-exclamation white-text"></i>
             </button>
             <!-- Edit form Modal -->
-            <div id="modal-{{ 'edit_book' }}" class="modal">
+            <div id="modal-edit-{{ 'edit_book' }}" class="modal">
                 <div class="modal-content">
                     <h4>Edit Book Entry</h4>
                     <div class="row card-panel grey lighten-5">
@@ -179,7 +178,7 @@
                 </div>
             </div>
             <!-- Delete Book Modal -->
-            <div id="modal-{{ 'delete_book' }}" class="modal deletebook">
+            <div id="modal-delete{{ book._id }}" class="modal deletebook">
                 <div class="modal-content">
                     <h4>CONTENT DELETION WARNING</h4>
                     <p>Are you sure that you want to delete this entry?</p>
@@ -213,18 +212,17 @@
 
             <!-- Edit and Delete buttons here, Edit opens modal with Edit form -->
 
-            <button data-target="modal-{{'edit_book' }}" class="btn modal-trigger brown darken-3 white-text"
+            <button data-target="modal-edit-{{ 'edit_book' }}" class="btn modal-trigger brown darken-3 white-text"
                 name="edit_book" id="modalpencil">
                 <a href="{{ url_for('edit_book', username=username, book_id=book._id) }}">
                     <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i></a>
             </button>
-            <button data-target="modal-{{ 'delete_book' }}" class="btn modal-trigger red darken-4 white-text"
+            <button data-target="modal-delete-{{ book._id }}" class="btn modal-trigger red darken-4 white-text"
                 name="delete_book" id="modalpencil">
-                <a href="modal-{{ 'delete_book' }}">
                     <i class="fas fa-exclamation white-text"></i></a>
             </button>
             <!-- Edit form Modal -->
-            <div id="modal-{{ 'edit_book' }}" class="modal">
+            <div id="#modal-edit-{{ 'edit_book' }}" class="modal">
                 <div class="modal-content">
                     <h4>Edit Book Entry</h4>
                     <div class="row card-panel grey lighten-5">
@@ -333,7 +331,7 @@
                 </div>
             </div>
             <!-- Delete Book Modal -->
-            <div id="modal-{{ 'delete_book' }}" class="modal deletebook">
+            <div id="modal-delete-{{ book._id }}" class="modal deletebook">
                 <div class="modal-content">
                     <h4>CONTENT DELETION WARNING</h4>
                     <p>Are you sure that you want to delete this entry?</p>
