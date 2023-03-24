@@ -50,7 +50,7 @@
                 <img src="{{ book.bookimg }}" class="responsive-img"></div>
                 {% else %}
                 <div class="col s3 bookimgcontainer">
-                    <img src="https://biotrop.org/images/default-book.png" class="responsive-img"></div>
+                    <img src="{{ url_for('static', filename='img/default-book.png') }}" class="responsive-img"></div>
                     {% endif %}
             <span class="white-text col s9">
                 <strong>{{ book.title }}</strong><br> by: <em>{{ book.author }}</em>
