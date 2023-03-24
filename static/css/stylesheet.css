@@ -157,6 +157,7 @@ h5.howto {
 /* ------------------------------------ Book Entry Cards ------------------------------------ */
 
 .cardcontent {
+  padding-top: 10px 0 2px 5px;
   font-size: 0.75em;
   font-weight: 500;
   color: white;
@@ -165,7 +166,19 @@ h5.howto {
 
 div.bookcontentunread {
   background-color: #618C97;
-  border-radius: 10px;
+  border-radius: 20px;
+}
+
+p {
+  font-weight: 500;
+  font-family: 'Libre Baskerville', serif;
+  letter-spacing: 1px;
+}
+
+p strong {
+  font-weight: 600;
+  font-family: 'Special Elite', serif;
+  letter-spacing: 1px;
 }
 
 /* ------------------------------------ Forms ------------------------------------ */

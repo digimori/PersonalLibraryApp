@@ -27,6 +27,7 @@ def index():
 @app.route("/get_books")
 def get_books():
     booksread = list(mongo.db.booksread.find())
+
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -48,7 +49,8 @@ def get_books():
 
     categories = mongo.db.reading_list.find().sort("category_name", 1)
     return render_template(
-        "profile.html", booksread=book, reading_list=categories
+        "profile.html", booksread=book,
+        reading_list=categories, username=session["user"]
         )
 
 
@@ -59,7 +61,8 @@ def search():
     booksread = list(mongo.db.booksread.find({"$text": {"$search": query}}))
 
     return render_template(
-        "profile.html", username=session["user"], booksread=booksread, reading_list=categories
+        "profile.html", username=session["user"],
+        booksread=booksread, reading_list=categories
         )
 
 
@@ -95,7 +98,8 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            if check_password_hash(existing_user["password"], request.form.get("password")):
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
@@ -129,7 +133,7 @@ def profile(username):
             reading_list=categories
             )
 
-    return redirect(url_for("login"))
+    return redirect(url_for("login", username=session["user"]))
 
 
 @app.route("/logout")
@@ -154,14 +158,16 @@ def add_book():
             "publisher": request.form.get("publisher"),
             "page_count": request.form.get("page_count"),
             "isbn": request.form.get("isbn"),
-            "synopsis": request.form.get("synopsis")
+            "synopsis": request.form.get("synopsis"),
+            "bookimg": request.form.get("bookimg")
             }
         mongo.db.booksread.insert_one(book)
         flash("Book Successfully Added")
         return redirect(url_for("add_book"))
 
     bookcat = mongo.db.reading_list.find().sort("category_name", 1)
-    return render_template("add_book.html", reading_list=bookcat)
+    return render_template(
+        "add_book.html", reading_list=bookcat, username=session["user"])
 
 
 @app.route("/profile/<username>, <book_id>", methods=["GET", "POST"])
@@ -177,17 +183,20 @@ def edit_book(username, book_id):
             "publisher": request.form.get("publisher"),
             "page_count": request.form.get("page_count"),
             "isbn": request.form.get("isbn"),
-            "synopsis": request.form.get("synopsis")
+            "synopsis": request.form.get("synopsis"),
+            "bookimg": request.form.get("bookimg")
         }
 
         book = mongo.db.booksread.find({"_id": ObjectId(book_id)}, submit)
-        mongo.db.booksread.replace_one({"_id": ObjectId(book_id)}, submit, True)
+        mongo.db.booksread.replace_one(
+            {"_id": ObjectId(book_id)}, submit, True)
         categories = mongo.db.reading_list.find().sort("category_name", 1)
         flash("Book Entry Edited")
     return redirect(url_for("profile", username=session["user"]))
 
     return render_template(
-        "profile.html", book=book, reading_list=categories
+        "profile.html",
+        book=book, reading_list=categories, username=session["user"]
         )
 
 
