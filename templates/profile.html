@@ -15,7 +15,7 @@
     <div class="col s8 m9 offset-m1 offset-s2 card explanation">
         <h5 class="howto">How to use this library:</h5>
         <p>My Personal Library stores your book entries in a card format below.<br>
-        The entries can be altered using the Edit Icon <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i></a>, 
+        The entries can be altered using the Edit Icon <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i>, 
         or Deleted using the Delete Icon <i class="fas fa-exclamation btn-small red white-text"></i>.<br>
         The search bar can find books based on the Title or the Author.<br><br>
         Brown background signifies that the book has been read.<br>
@@ -110,79 +110,79 @@
                                     <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
                                     <input id="titleread" name="title" minlength="2" maxlength="50" type="text" value="{{ book.title }}"
                                         class="validate" required>
-                                    <label for="title">Book title</label>
+                                    <label for="titleread">Book title</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
-                                    <input id="author" name="author" minlength="5" maxlength="50" type="text" value="{{ book.author }}"
+                                    <input id="authorread" name="author" minlength="5" maxlength="50" type="text" value="{{ book.author }}"
                                         class="validate" required>
-                                    <label for="author">Author</label>
+                                    <label for="authorread">Author</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-masks-theater prefix brown-text text-darken-3"></i>
-                                    <input id="genre" name="genre" minlength="5" maxlength="50" type="text"
+                                    <input id="genreread" name="genre" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.genre }}" required>
-                                    <label for="genre">Genre</label>
+                                    <label for="genreread">Genre</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-star-half-stroke prefix brown-text text-darken-3"></i>
-                                    <input id="rating" name="rating" minlength="5" maxlength="50" type="text" value="{{ book.rating }}"
+                                    <input id="ratingread" name="rating" minlength="5" maxlength="50" type="text" value="{{ book.rating }}"
                                         class="validate" required>
-                                    <label for="rating">Rating</label>
+                                    <label for="ratingread">Rating</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
-                                    <input id="release_date" name="release_date" type="text" class="datepicker validate" value="{{ book.release_date }}"
+                                    <input id="release_dateread" name="release_date" type="text" class="datepicker validate" value="{{ book.release_date }}"
                                         required>
-                                    <label for="release_date">Publication Date:</label>
+                                    <label for="release_dateread">Publication Date:</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-book prefix brown-text text-darken-3"></i>
-                                    <input id="publisher" name="publisher" minlength="5" maxlength="50" type="text"
+                                    <input id="publisherread" name="publisher" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.publisher }}" required>
-                                    <label for="publisher">Publisher</label>
+                                    <label for="publisherread">Publisher</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-hashtag prefix brown-text text-darken-3"></i>
-                                    <input id="page_count" name="page_count" minlength="1" maxlength="50" type="text"
+                                    <input id="page_countread" name="page_count" minlength="1" maxlength="50" type="text"
                                         class="validate" value="{{ book.page_count }}" required>
-                                    <label for="page_count">Page Count</label>
+                                    <label for="page_countread">Page Count</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-barcode prefix brown-text text-darken-3"></i>
-                                    <input id="isbn" name="isbn" minlength="5" maxlength="50" type="text"
+                                    <input id="isbnread" name="isbn" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.isbn }}" required>
-                                    <label for="isbn">ISBN-13</label>
+                                    <label for="isbnread">ISBN-13</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
-                                    <input id="synopsis" name="synopsis" minlength="5" maxlength="600" type="text"
+                                    <input id="synopsisread" name="synopsis" minlength="5" maxlength="600" type="text"
                                         class="validate" value="{{ book.synopsis }}" required>
-                                    <label for="synopsis">Synopsis</label>
+                                    <label for="synopsisread">Synopsis</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12 formentry">
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
-                                    <input id="bookimg" name="bookimg" minlength="3" maxlength="600"
+                                    <input id="bookimgread" name="bookimg" minlength="3" maxlength="600"
                                         type="text" value="{{ book.bookimg }}" class="validate">
-                                    <label for="bookimg">Book IMG</label>
+                                    <label for="bookimgread">Book IMG</label>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -240,13 +240,13 @@
             <!-- Edit and Delete buttons here, Edit opens modal with Edit form -->
 
             <button data-target="modal-edit-{{ book._id }}" class="btn modal-trigger brown darken-3 white-text"
-                name="edit_book">
-                    <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i>
-            </button>
-            <button data-target="modal-delete-{{ book._id }}" class="btn modal-trigger red darken-4 white-text"
-                name="delete_book">
-                    <i class="fas fa-exclamation white-text"></i>
-            </button>
+            name="edit_book">
+                <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i>
+        </button>
+        <button data-target="modal-delete-{{ book._id }}" class="btn modal-trigger red darken-4 white-text"
+            name="delete_book">
+                <i class="fas fa-exclamation white-text"></i>
+        </button>
             <!-- Edit form Modal -->
             <div id="modal-edit-{{ book._id }}" class="modal">
                 <div class="modal-content">
@@ -285,7 +285,7 @@
                                     <i class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
                                     <input id="authorunread" name="author" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.author }}" required>
-                                    <label for="author">Author</label>
+                                    <label for="authorunread">Author</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -293,7 +293,7 @@
                                     <i class="fas fa-masks-theater prefix brown-text text-darken-3"></i>
                                     <input id="genreunread" name="genre" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.genre }}" required>
-                                    <label for="genre">Genre</label>
+                                    <label for="genreunread">Genre</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -301,7 +301,7 @@
                                     <i class="fas fa-star-half-stroke prefix brown-text text-darken-3"></i>
                                     <input id="ratingunread" name="rating" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.rating }}" required>
-                                    <label for="rating">Rating</label>
+                                    <label for="ratingunread">Rating</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -309,7 +309,7 @@
                                     <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
                                     <input id="release_dateunread" name="release_date" type="text" class="datepicker validate" value="{{ book.release_date }}"
                                         required>
-                                    <label for="release_date">Publication Date:</label>
+                                    <label for="release_dateunread">Publication Date:</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -317,7 +317,7 @@
                                     <i class="fas fa-book prefix brown-text text-darken-3"></i>
                                     <input id="publisherunread" name="publisher" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.publisher }}" required>
-                                    <label for="publisher">Publisher</label>
+                                    <label for="publisherunread">Publisher</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -325,7 +325,7 @@
                                     <i class="fas fa-hashtag prefix brown-text text-darken-3"></i>
                                     <input id="page_countunread" name="page_count" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.page_count }}" required>
-                                    <label for="page_count">Page Count</label>
+                                    <label for="page_countunread">Page Count</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -333,7 +333,7 @@
                                     <i class="fas fa-barcode prefix brown-text text-darken-3"></i>
                                     <input id="isbnunread" name="isbn" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.isbn }}" required>
-                                    <label for="isbn">ISBN-13</label>
+                                    <label for="isbnunread">ISBN-13</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -341,7 +341,7 @@
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
                                     <input id="synopsisunread" name="synopsis" minlength="5" maxlength="600" type="text"
                                         class="validate" value="{{ book.synopsis }}" required>
-                                    <label for="synopsis">Synopsis</label>
+                                    <label for="synopsisunread">Synopsis</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -349,7 +349,7 @@
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
                                     <input id="bookimgunread" name="bookimg" minlength="3" maxlength="600"
                                         type="text" value="{{ book.bookimg }}" class="validate">
-                                    <label for="bookimg">Book IMG</label>
+                                    <label for="bookimgunread">Book IMG</label>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -359,8 +359,9 @@
                                 <button type="submit" class="btn-large brown darken-3 white-text text-shadow col s12">
                                     Edit Book <i class="fas fa-edit right"></i>
                                 </button>
-                            </div>
                         </div>
+                        </form>
+                    </div>
                     </form>
                 </div>
             </div>
