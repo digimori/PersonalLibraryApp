@@ -108,81 +108,71 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
-                                    <input name="title" minlength="2" maxlength="50" type="text" value="{{ book.title }}"
+                                    <input name="title" minlength="2" maxlength="50" type="text" placeholder="Book Title" value="{{ book.title }}"
                                         class="validate" required>
-                                    <label for="title">Book title</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
-                                    <input name="author" minlength="5" maxlength="50" type="text" value="{{ book.author }}"
+                                    <input name="author" minlength="5" maxlength="50" type="text" placeholder="Author" value="{{ book.author }}"
                                         class="validate" required>
-                                    <label for="author">Author</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-masks-theater prefix brown-text text-darken-3"></i>
                                     <input name="genre" minlength="5" maxlength="50" type="text"
-                                        class="validate" value="{{ book.genre }}" required>
-                                    <label for="genre">Genre</label>
+                                        class="validate" value="{{ book.genre }}" placeholder="Genre" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-star-half-stroke prefix brown-text text-darken-3"></i>
-                                    <input name="rating" minlength="5" maxlength="50" type="text" value="{{ book.rating }}"
-                                        class="validate" required>
-                                    <label for="rating">Rating</label>
+                                    <input name="rating" minlength="5" maxlength="50" type="text" value="{{ book.rating }}" placeholder="Rating"
+                                        class="validate" required>>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
-                                    <input name="release_date" type="text" class="datepicker validate" value="{{ book.release_date }}"
+                                    <input name="release_date" type="text" class="datepicker validate" value="{{ book.release_date }}" placeholder="Pbulication Date"
                                         required>
-                                    <label for="release_date">Publication Date:</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-book prefix brown-text text-darken-3"></i>
                                     <input name="publisher" minlength="5" maxlength="50" type="text"
-                                        class="validate" value="{{ book.publisher }}" required>
-                                    <label for="publisher">Publisher</label>
+                                        class="validate" value="{{ book.publisher }}" placeholder="Publisher" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-hashtag prefix brown-text text-darken-3"></i>
                                     <input name="page_count" minlength="1" maxlength="50" type="text"
-                                        class="validate" value="{{ book.page_count }}" required>
-                                    <label for="page_count">Page Count</label>
+                                        class="validate" value="{{ book.page_count }}" placeholder="Page Count" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-barcode prefix brown-text text-darken-3"></i>
                                     <input name="isbn" minlength="5" maxlength="50" type="text"
-                                        class="validate" value="{{ book.isbn }}" required>
-                                    <label for="isbn">ISBN-13</label>
+                                        class="validate" value="{{ book.isbn }}" placeholder="ISBN-13" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
                                     <input name="synopsis" minlength="5" maxlength="600" type="text"
-                                        class="validate" value="{{ book.synopsis }}" required>
-                                    <label for="synopsis">Synopsis</label>
+                                        class="validate" value="{{ book.synopsis }}" placeholder="Synopsis" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12 formentry">
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
                                     <input name="bookimg" minlength="3" maxlength="600"
-                                        type="text" value="{{ book.bookimg }}" class="validate">
-                                    <label for="bookimg">Book IMG</label>
+                                        type="text" value="{{ book.bookimg }}" placeholder="Book IMG" class="validate">
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -276,80 +266,71 @@
                                 <div class="input-field col s12">
                                     <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
                                     <input name="title" minlength="2" maxlength="50" type="text"
-                                        class="validate" value="{{ book.title }}" required>
-                                    <label for="title">Book title</label>
+                                        class="validate" value="{{ book.title }}" placeholder="Book Title" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
                                     <input name="author" minlength="5" maxlength="50" type="text"
-                                        class="validate" value="{{ book.author }}" required>
-                                    <label for="author">Author</label>
+                                        class="validate" value="{{ book.author }}" placeholder="Author" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-masks-theater prefix brown-text text-darken-3"></i>
                                     <input name="genre" minlength="5" maxlength="50" type="text"
-                                        class="validate" value="{{ book.genre }}" required>
-                                    <label for="genre">Genre</label>
+                                        class="validate" value="{{ book.genre }}" placeholder="Genre" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-star-half-stroke prefix brown-text text-darken-3"></i>
                                     <input name="rating" minlength="5" maxlength="50" type="text"
-                                        class="validate" value="{{ book.rating }}" required>
-                                    <label for="rating">Rating</label>
+                                        class="validate" value="{{ book.rating }}" placeholder="Rating" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
-                                    <input name="release_date" type="text" class="datepicker validate" value="{{ book.release_date }}"
+                                    <input name="release_date" type="text" class="datepicker validate" value="{{ book.release_date }}" placeholder="Publication Date"
                                         required>
-                                    <label for="release_date">Publication Date:</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-book prefix brown-text text-darken-3"></i>
                                     <input name="publisher" minlength="5" maxlength="50" type="text"
-                                        class="validate" value="{{ book.publisher }}" required>
-                                    <label for="publisher">Publisher</label>
+                                        class="validate" value="{{ book.publisher }}" placeholder="Publisher" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-hashtag prefix brown-text text-darken-3"></i>
                                     <input name="page_count" minlength="5" maxlength="50" type="text"
-                                        class="validate" value="{{ book.page_count }}" required>
-                                    <label for="page_count">Page Count</label>
+                                        class="validate" value="{{ book.page_count }}" placeholder="Page Count" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-barcode prefix brown-text text-darken-3"></i>
                                     <input name="isbn" minlength="5" maxlength="50" type="text"
-                                        class="validate" value="{{ book.isbn }}" required>
-                                    <label for="isbn">ISBN-13</label>
+                                        class="validate" value="{{ book.isbn }}" placeholder="ISBN-13" required>
+                                    
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
                                     <input name="synopsis" minlength="5" maxlength="600" type="text"
-                                        class="validate" value="{{ book.synopsis }}" required>
-                                    <label for="synopsis">Synopsis</label>
+                                        class="validate" value="{{ book.synopsis }}" placeholder="Synopsis" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12 formentry">
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
                                     <input name="bookimg" minlength="3" maxlength="600"
-                                        type="text" value="{{ book.bookimg }}" class="validate">
-                                    <label for="bookimg">Book IMG</label>
+                                        type="text" value="{{ book.bookimg }}" class="validate" placeholder="Book IMG">
                                 </div>
                             </div>
                             <div class="modal-footer">
