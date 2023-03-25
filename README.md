@@ -70,9 +70,11 @@ I also chose to use a cold colour for the "Unread books" cards over warm, as I r
 
 - The Navigation bar collapses into a hamburger menu on smaller screen sizes in order to not take up too much space. 
 
+### Wireframes
+---
+
 <details>
   <summary>Wireframes (Adobe Photoshop):</summary>
----
 
  ####  Desktop, Tablet, Mobile
 
@@ -98,7 +100,8 @@ Database schema (Books to Read):
 - Publisher
 - ISBN-13
 - Page Count
-- Synopsis (TextArea)
+- Synopsis
+- Book Image URL
 
 Database Schema (Books that have been Read):
 - Title
@@ -109,7 +112,8 @@ Database Schema (Books that have been Read):
 - Publisher
 - ISBN-13
 - Page Count
-- Synopsis (TextArea)
+- Synopsis 
+- Book Image URL
 
 
 I have ensured that the "Rating" input field, though part of both forms, is not required, so that when adding an un-read book, you do not need to add the star-rating to it straight away and can be added later.   
@@ -144,26 +148,64 @@ There is also a "Logout" button, which will end the user session and log them ou
 
 #### Profile
 
-Pages post-login:
-- Profile
-    - Display reading (to-read) list
+The profile page is designed to show both the books read and unread to the user. It also incorporates a search function that allows the user to find their books by Author or Title.  
+The book entries display a placeholder image if no book cover is uploaded.  
+The Search bar will display a "Results not found" message if the book entry does not exist. 
 
+
+<details>
+<summary>Profile Page</summary>
+
+![Full Profile Page](/readmeimages/profilepagewholeview.png)
+</details>
+
+<details>
+<summary>Instructions</summary>
+
+![Instructions](/readmeimages/howtouselibrary.png)
+</details>
+
+<details>
+<summary>Search Bar</summary>
+
+![Search Bar](/readmeimages/searchbar.png)
+![No Results](/readmeimages/noresults.png)
+
+</details>
+
+<details>
+<summary>Book Entry cards</summary>
+
+![Book Entry Cards](/readmeimages/cardsforbooks.png)
+</details>
 
 - Add, Edit pages for each category
 - Delete is a backend function
     - Defensive program this with a Javascript modal
 
 
-#### Adding books
+### Adding books
 - To add books, I implemented a form, asking for the user to input data, that will then be stored and pushed onto cards that they will be able to see on the profile page.
 <details>
-<summary>Form for adding books</summary>
+<summary>Whole page view</summary>
 
-![Form for Books]()
-
+![Add Books Page](/readmeimages/addbookpagedesktop.png) 
 </details>
 
-#### Editing books
+<details>
+<summary>Collapsible instructions</summary>
+
+![Instructions](/readmeimages/addbookcollapsible.png) 
+</details>
+
+<details>
+<summary>Book Form - Used to add books to the database</summary>
+
+![Form for Books](/readmeimages/addbookform.png)
+</details>
+
+
+### Editing books
 - For the Editing books, I choose to implement a modal, so that there is no need to navigate back and fourth between separate pages. 
 - The modal can be cancelled by tapping the cancel button, or by tapping anywhere outside of the modal.
 - The editing also allows the user to change the category of the book from "Books to Read" to "Books Read" once they have been completed. 
@@ -188,8 +230,15 @@ Pages post-login:
 ### Navigation
 
 Profile - 
+ - Search bar - Reset and Search buttons
+ - Book entries - Edit and Delete buttons
+ - Modals - Edit/Delete/Cancel buttons
+
 Add Book - 
-Logout - 
+ - Add Book
+ - Instructions collapsible
+
+Logout - Logout - Returns to Index
 
 Index - Login and Registration
 
@@ -197,8 +246,28 @@ Index - Login and Registration
 ### Testing and Validation:
 --- 
 
-### Validation (HTML, CSS, JSHint, Python PEP8)
-#### Manual (Tables, Test-Pass)
+###  Validation (HTML, CSS, Python PEP8)
+---
+<details>
+<summary>HTML</summary>
+
+[Index](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpersonal-library-mongodb.herokuapp.com%2Findex)
+[]()
+[]()
+[]()
+[]()
+</details>
+
+<details>
+<summary>CSS, jQuery and Python PEP8</summary>
+
+[]
+[]
+[]
+</details>
+
+
+#### Manual Testing - User Testing
 
 | Test | Expectation | Pass/Fail |
 | ----------- | ----------- | ----------- |

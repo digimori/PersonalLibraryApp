@@ -15,8 +15,11 @@
     <div class="col s8 m9 offset-m1 offset-s2 card explanation">
         <h5 class="howto">How to use this library:</h5>
         <p>My Personal Library stores your book entries in a card format below.<br>
-        The entries can be altered using the Edit Icon (Icon here), or Deleted using the Delete Icon(Icon here).<br>
-        The search bar can find books based on the Title or the Author.
+        The entries can be altered using the Edit Icon <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i></a>, 
+        or Deleted using the Delete Icon <i class="fas fa-exclamation btn-small red white-text"></i>.<br>
+        The search bar can find books based on the Title or the Author.<br><br>
+        Brown background signifies that the book has been read.<br>
+        Blue background signifies that the book has yet to be read.<br>
     </div>
 </div>
 <div class="row ">
@@ -47,10 +50,10 @@
             <div class="row valign-wrapper">
                 {% if book.bookimg %}
             <div class="col s3 bookimgcontainer">
-                <img src="{{ book.bookimg }}" class="responsive-img"></div>
+                <img src="{{ book.bookimg }}" class="responsive-img" alt="Imported book image"></div>
                 {% else %}
                 <div class="col s3 bookimgcontainer">
-                    <img src="{{ url_for('static', filename='img/default-book.png') }}" class="responsive-img"></div>
+                    <img src="{{ url_for('static', filename='img/default-book.png') }}" class="responsive-img" alt="Book placeholder image"></div>
                     {% endif %}
             <span class="white-text col s9">
                 <strong>{{ book.title }}</strong><br> by: <em>{{ book.author }}</em>
@@ -70,12 +73,11 @@
             <!-- Edit and Delete buttons here, Edit opens modal with Edit form -->
 
             <button data-target="modal-edit-{{ book._id }}" class="btn modal-trigger brown darken-3 white-text"
-                name="edit_book" id="modalpencil">
-                <a href="{{ url_for('edit_book', username=username, book_id=book._id) }}">
+                name="edit_book">
                     <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i></a>
             </button>
             <button data-target="modal-delete-{{ book._id }}" class="btn modal-trigger red darken-4 white-text"
-                name="delete_book" id="modalpencil">
+                name="delete_book">
                     <i class="fas fa-exclamation white-text"></i>
             </button>
             <!-- Edit form Modal -->
@@ -92,7 +94,7 @@
                                         <option value="" selected>Choose Category</option>
                                         {% for category in reading_list %}
                                         {% if category.category_name == book.category_name %}
-                                        <option value="{{ category.category_name }}" selected>
+                                        <option value="{{ category.category_name }}">
                                             {{ category.category_name }}</option>
                                         {% else %}
                                         <option value="{{ category.category_name }}">
@@ -106,7 +108,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
-                                    <input id="title" name="title" minlength="2" maxlength="50" type="text" value="{{ book.title }}"
+                                    <input id="titleread" name="title" minlength="2" maxlength="50" type="text" value="{{ book.title }}"
                                         class="validate" required>
                                     <label for="title">Book title</label>
                                 </div>
@@ -192,9 +194,8 @@
                                 </button></a>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
             <!-- Delete Book Modal -->
             <div id="modal-delete-{{ book._id }}" class="modal deletebook">
                 <div class="modal-content">
@@ -203,9 +204,8 @@
                     <p>This cannot be undone</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="{{ url_for('delete_book', book_id=book._id) }}" class="btn-small red accent-4"
-                        id="deletebutton">DELETE</a>
-                    <a href="modal-close" class="btn-small" id="cancelbutton">Cancel</a>
+                    <a href="{{ url_for('delete_book', book_id=book._id) }}" class="btn-small red accent-4 deletebutton">DELETE</a>
+                    <a href="modal-close" class="btn-small cancelbutton">Cancel</a>
                 </div>
             </div>
         </div>
@@ -217,10 +217,10 @@
             <div class="row valign-wrapper">
             {% if book.bookimg %}
             <div class="col s3 bookimgcontainer">
-                <img src="{{ book.bookimg }}" class="responsive-img"></div>
+                <img src="{{ book.bookimg }}" class="responsive-img" alt="Imported book image"></div>
                 {% else %}
                 <div class="col s3 bookimgcontainer">
-                    <img src="{{ url_for('static', filename='img/default-book.png')}}" class="responsive-img"></div>
+                    <img src="{{ url_for('static', filename='img/default-book.png')}}" class="responsive-img" alt="Placeholder Book image"></div>
                     {% endif %}
             <span class="white-text col s9">
                 <strong>{{ book.title }}</strong><br> by: <em>{{ book.author }}</em>
@@ -240,13 +240,12 @@
             <!-- Edit and Delete buttons here, Edit opens modal with Edit form -->
 
             <button data-target="modal-edit-{{ book._id }}" class="btn modal-trigger brown darken-3 white-text"
-                name="edit_book" id="modalpencil">
-                <a href="{{ url_for('edit_book', username=username, book_id=book._id) }}">
-                    <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i></a>
+                name="edit_book">
+                    <i class="fas fa-screwdriver-wrench prefix white-text brown darken-3"></i>
             </button>
             <button data-target="modal-delete-{{ book._id }}" class="btn modal-trigger red darken-4 white-text"
-                name="delete_book" id="modalpencil">
-                    <i class="fas fa-exclamation white-text"></i></a>
+                name="delete_book">
+                    <i class="fas fa-exclamation white-text"></i>
             </button>
             <!-- Edit form Modal -->
             <div id="modal-edit-{{ book._id }}" class="modal">
@@ -262,7 +261,7 @@
                                         <option value="" selected>Choose Category</option>
                                         {% for category in reading_list %}
                                         {% if category.category_name == book.category_name %}
-                                        <option value="{{ category.category_name }}" selected>
+                                        <option value="{{ category.category_name }}">
                                             {{ category.category_name }}</option>
                                         {% else %}
                                         <option value="{{ category.category_name }}">
@@ -276,7 +275,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
-                                    <input id="title" name="title" minlength="2" maxlength="50" type="text"
+                                    <input id="titleunread" name="title" minlength="2" maxlength="50" type="text"
                                         class="validate" value="{{ book.title }}" required>
                                     <label for="title">Book title</label>
                                 </div>
@@ -284,7 +283,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
-                                    <input id="author" name="author" minlength="5" maxlength="50" type="text"
+                                    <input id="authorunread" name="author" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.author }}" required>
                                     <label for="author">Author</label>
                                 </div>
@@ -292,7 +291,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-masks-theater prefix brown-text text-darken-3"></i>
-                                    <input id="genre" name="genre" minlength="5" maxlength="50" type="text"
+                                    <input id="genreunread" name="genre" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.genre }}" required>
                                     <label for="genre">Genre</label>
                                 </div>
@@ -300,7 +299,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-star-half-stroke prefix brown-text text-darken-3"></i>
-                                    <input id="rating" name="rating" minlength="5" maxlength="50" type="text"
+                                    <input id="ratingunread" name="rating" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.rating }}" required>
                                     <label for="rating">Rating</label>
                                 </div>
@@ -308,7 +307,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
-                                    <input id="release_date" name="release_date" type="text" class="datepicker validate" value="{{ book.release_date }}"
+                                    <input id="release_dateunread" name="release_date" type="text" class="datepicker validate" value="{{ book.release_date }}"
                                         required>
                                     <label for="release_date">Publication Date:</label>
                                 </div>
@@ -316,7 +315,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-book prefix brown-text text-darken-3"></i>
-                                    <input id="publisher" name="publisher" minlength="5" maxlength="50" type="text"
+                                    <input id="publisherunread" name="publisher" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.publisher }}" required>
                                     <label for="publisher">Publisher</label>
                                 </div>
@@ -324,7 +323,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-hashtag prefix brown-text text-darken-3"></i>
-                                    <input id="page_count" name="page_count" minlength="5" maxlength="50" type="text"
+                                    <input id="page_countunread" name="page_count" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.page_count }}" required>
                                     <label for="page_count">Page Count</label>
                                 </div>
@@ -332,7 +331,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-barcode prefix brown-text text-darken-3"></i>
-                                    <input id="isbn" name="isbn" minlength="5" maxlength="50" type="text"
+                                    <input id="isbnunread" name="isbn" minlength="5" maxlength="50" type="text"
                                         class="validate" value="{{ book.isbn }}" required>
                                     <label for="isbn">ISBN-13</label>
                                 </div>
@@ -340,7 +339,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
-                                    <input id="synopsis" name="synopsis" minlength="5" maxlength="600" type="text"
+                                    <input id="synopsisunread" name="synopsis" minlength="5" maxlength="600" type="text"
                                         class="validate" value="{{ book.synopsis }}" required>
                                     <label for="synopsis">Synopsis</label>
                                 </div>
@@ -348,7 +347,7 @@
                             <div class="row">
                                 <div class="input-field col s12 formentry">
                                     <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
-                                    <input id="bookimg" name="bookimg" minlength="3" maxlength="600"
+                                    <input id="bookimgunread" name="bookimg" minlength="3" maxlength="600"
                                         type="text" value="{{ book.bookimg }}" class="validate">
                                     <label for="bookimg">Book IMG</label>
                                 </div>
