@@ -26,7 +26,6 @@ def index():
 
 @app.route("/get_books")
 def get_books():
-    booksread = list(mongo.db.booksread.find())
 
     if request.method == "POST":
         submit = {

@@ -66,7 +66,7 @@
                 <strong>ISBN-13:</strong> {{ book.isbn }}<br>
                 <strong>Synopsis:</strong> {{ book.synopsis }}<br>
             </p>
-</div>
+        </div>
             <!-- Edit and Delete buttons here, Edit opens modal with Edit form -->
 
             <button data-target="modal-edit-{{ book._id }}" class="btn modal-trigger brown darken-3 white-text"
@@ -191,7 +191,7 @@
                                     Edit Book <i class="fas fa-edit right"></i>
                                 </button></a>
                             </div>
-                    </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -220,7 +220,7 @@
                 <img src="{{ book.bookimg }}" class="responsive-img"></div>
                 {% else %}
                 <div class="col s3 bookimgcontainer">
-                    <img src="https://biotrop.org/images/default-book.png" class="responsive-img"></div>
+                    <img src="{{ url_for('static', filename='img/default-book.png')}}" class="responsive-img"></div>
                     {% endif %}
             <span class="white-text col s9">
                 <strong>{{ book.title }}</strong><br> by: <em>{{ book.author }}</em>
@@ -236,7 +236,7 @@
                 <strong>ISBN-13:</strong> {{ book.isbn }}<br>
                 <strong>Synopsis:</strong> {{ book.synopsis }}<br>
             </p>
-</div>
+        </div>
             <!-- Edit and Delete buttons here, Edit opens modal with Edit form -->
 
             <button data-target="modal-edit-{{ book._id }}" class="btn modal-trigger brown darken-3 white-text"
@@ -361,7 +361,7 @@
                                     Edit Book <i class="fas fa-edit right"></i>
                                 </button>
                             </div>
-                    </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -378,15 +378,14 @@
                     <a href="modal-close" class="btn-small" id="cancelbutton">Cancel</a>
                 </div>
             </div>
-</div>
         </div>
-
+    </div>
     {% endif %}      
-    {% endfor %}
-    {% else %}
-        <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
-    {% endif %}
-</div>
+        {% endfor %}
+            {% else %}
+                <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+        {% endif %}
+    </div>
 
 
 

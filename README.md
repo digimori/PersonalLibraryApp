@@ -222,13 +222,11 @@ This was also used to test the responsiveness as I could change the breakpoints 
 
 ### Bugs and Fixes
 ---
-| Bug/Issue | Fix Implemented |
-| ----------- | ----------- |
-| Login Form | I expect the form to recognize my login credentials and create a session to login to my profile |
-- Modal bug
-- unable to select category - fixed with redefining reader_list in both functions
-- Overriding CSS Materialize - went to use !imporant but realised this is bad juju so specificity
-- originally had books read and unread in separate collections, consolidated them to make them easier to loop through
+| Bug/Issue | Explanation | Fix Implemented |
+| ----------- | ----------- | ----------- |
+| Modal Bug | When editing forms or deleting an entry through the modal, it would only delete the first entry | Put unique id tags on the divs that opened and connected the modals so that it could identify what was being specifically edited or deleted |
+| Unable to select Category on Edit form | When selected, the edit form would not show the categories available for selection | Redefined the reading_list in the render_template method so that it linked to the category function |
+| Books not displaying | I originally had books read and unread in separate collections, which made it harder to manage the data from a front-end point | Consolidated the books to one collection, separated instead by category_name to make them easier to loop through |
 
 ### Deployment (Github and Heroku):
 ---
@@ -262,20 +260,28 @@ This was also used to test the responsiveness as I could change the breakpoints 
 
 #### To deploy to Heroku:
 
-Create an account with [Heroku]
-Login with username/password (This requires multi-factor authentication through an external device such as the Salesforce app - download link)
-Click on "New" > "Create App"
+Create an account with [Heroku](https://id.heroku.com/login)
+Login with username/password (This requires multi-factor authentication through an external device such as the [Salesforce app](https://www.salesforce.com/solutions/mobile/app-suite/security/))
+- Click on "New" > "Create App"
 - Use "Europe" as the host
 - Implement a distinct name for the app
 - Click "Create App"
+- Click on the app's name to open the settings and deployment section
 
-- Click on the app to open
-[image]
-
-- Open the Settings tab and find the section "Config Vars" (This should be the second section down - image)
+- Open the Settings tab and find the section "Config Vars"
 - Click "Reveal Config Vars"
-- Input the following Key-Value Pairs:
-(CHECK THIS WITH MENTOR BECAUSE I THOUGHT YOU CAN'T DO THIS????? HENCE ENV.PY AND GITIGNORE???)
+- Input the following Key-Value Pairs (This is an example sample set and can be found under 'example.py' in this repository, you will need to configure it with your own settings placed inside the angle brackets - Remove the angle brackets once the information is placed inside them): 
+
+| Key | Value | Explanation |
+| ----------- | ----------- | ----------- |
+| IP | 0.0.0.0 | Local IP |
+| PORT | 5000 | This is the port for Flask |
+| SECRET_KEY | Any secret key | A password for access |
+| MONGO_URI | mongodb+srv://root:<password>@<cluster_name>.ixpv5wd.mongodb.net/<database_name>?retryWrites=true&w=majority | Connection to Database |
+| MONGO_DBNAME | <database_name> | Database name |
+| DEVELOPMENT | TRUE | Turns the workspace into a development state |
+| DEBUG | TRUE | Turns the Debugger on for the workspace |
+
 
 - Once those are saved, navigate to the Deploy tab
 - On Deployment method", click "Github"
@@ -285,9 +291,8 @@ Click on "New" > "Create App"
 
 
 ### Credits
----     
-
+--- 
 #### Code and libraries
-    - I kept a fair few bits of code from the mini project surrounding the login/register functionality to maintain securite measures and validation.
-    - Unsplash image for background (find the link)
-    - Materialize(CSS)
+- I kept a fair few bits of code from the mini project surrounding the login/register functionality to maintain security measures and validation.
+- [Unsplash image for background](https://unsplash.com/photos/_YzGQvASeMk)
+- Materialize(CSS) for the main bulk of the layout.
