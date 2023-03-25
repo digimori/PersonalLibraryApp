@@ -64,7 +64,7 @@ I eventually opted to disregard the cursive fonts as they are very difficult for
 - For the colours, I wanted to keep it muted, partly due to personal preferences and because it is easier to read. I wanted to limit eye strain and so avoided using pure whites and blacks and opted for greys, neutral beiges and browns instead.     
 I also chose to use a cold colour for the "Unread books" cards over warm, as I realised, with browns and reds together, this is not going to be user friendly to people with colour-blindness, so opted for blue to distinguish from the red.
 
-- The home page login and registration pages are backed with [this image]() from Unsplash, I chose it as it fit the library theme without being too busy or distracting. 
+- The home page login and registration pages are backed with [this image](https://unsplash.com/photos/_YzGQvASeMk) from Unsplash, I chose it as it fit the library theme without being too busy or distracting. 
 
 - For the Book entries, I chose to use cards through Materialize CSS. This provided a convenient, easily scalable and responsive method to display the information about each book entry to the user and customize it with edit and delete buttons. 
 
@@ -73,7 +73,8 @@ I also chose to use a cold colour for the "Unread books" cards over warm, as I r
 <details>
   <summary>Wireframes (Adobe Photoshop):</summary>
 ---
-####  Desktop, Tablet, Mobile
+
+ ####  Desktop, Tablet, Mobile
 
 - Index page (Not Logged in and Registration page are laid out the same):
 ![Index - Not logged in/Registration](/readmeimages/Wireframesprelogin.jpg)
@@ -137,7 +138,7 @@ There is also a "Logout" button, which will end the user session and log them ou
 <details>
 <summary>Logout page</summary>
 
-![Logout]()
+![Logout](/readmeimages/logoutscreen.png)
 
 </details>
 
