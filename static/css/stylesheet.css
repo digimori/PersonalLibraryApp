@@ -22,7 +22,7 @@ body {
   font-family: 'Special Elite', serif;
 }
 
-main {
+div.blockcontent {
   flex: 1 0 auto;
 }
 
@@ -35,6 +35,7 @@ main {
 
 footer.page-footer {
   background-color: #524c48;
+  width: 100%;
 }
 
 a.footerlink {
@@ -200,7 +201,7 @@ div.formentry {
   color: #524c48;
 }
 
-#cancelbutton {
+.cancelbutton {
   padding-top: 3px;
   margin-right: 3px;
   background-color: #524c48;
@@ -209,7 +210,7 @@ div.formentry {
   font-family: 'Special Elite', serif;
 }
 
-#deletebutton {
+.deletebutton {
   padding-top: 3px;
   background-color: #a70000;
   color: #fff;

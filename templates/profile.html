@@ -42,7 +42,6 @@
 </div>
 
 {% if booksread|length > 0 %}
-<div class="row col s12">
     {% for book in booksread %}
     {% if book.category_name == "Books Read" %}
     <div class="col s12 m6">
@@ -90,7 +89,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-folder-open brown-text text-darken-3"></i>
-                                    <select id="category_name" name="category_name" class="validate" required>
+                                    <select id="category_name1" name="category_name" class="validate" required>
                                         <option value="" selected>Choose Category</option>
                                         {% for category in reading_list %}
                                         {% if category.category_name == book.category_name %}
@@ -102,7 +101,7 @@
                                         {% endif %}
                                         {% endfor %}
                                     </select>
-                                    <label for="category_name">Book category</label>
+                                    <label for="category_name1">Book category</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -175,14 +174,16 @@
                                         type="text" value="{{ book.bookimg }}" placeholder="Book IMG" class="validate">
                                 </div>
                             </div>
+                            </form>
                             <div class="modal-footer">
                                 <a href="#!" class="btn-large red darken-3 text-shadow modal-close cancelmodal col s12">
                                     Cancel <i class="fas fa-times-circle right"></i>
                                 </a>
-                                <a href="{{ url_for('edit_book', username=username, book_id=book._id) }}"><button type="submit" class="btn-large brown darken-3 white-text text-shadow col s12">
+                                <button type="submit" class="btn-large brown darken-3 white-text text-shadow col s12">
                                     Edit Book <i class="fas fa-edit right"></i>
-                                </button></a>
+                                </button>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -247,7 +248,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-folder-open brown-text text-darken-3"></i>
-                                    <select id="category_name" name="category_name" class="validate" required>
+                                    <select id="category_name2" name="category_name" class="validate" required>
                                         <option value="" selected>Choose Category</option>
                                         {% for category in reading_list %}
                                         {% if category.category_name == book.category_name %}
@@ -259,7 +260,7 @@
                                         {% endif %}
                                         {% endfor %}
                                     </select>
-                                    <label for="category_name">Book category</label>
+                                    <label for="category_name2">Book category</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -353,9 +354,8 @@
                     <p>This cannot be undone</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="{{ url_for('delete_book', book_id=book._id) }}" class="btn-small red accent-4"
-                        id="deletebutton">DELETE</a>
-                    <a href="modal-close" class="btn-small" id="cancelbutton">Cancel</a>
+                    <a href="{{ url_for('delete_book', book_id=book._id) }}" class="btn-small red accent-4 deletebutton">DELETE</a>
+                    <a href="modal-close" class="btn-small cancelbutton">Cancel</a>
                 </div>
             </div>
         </div>
