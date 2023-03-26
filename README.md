@@ -252,16 +252,16 @@ Index - Login and Registration
 <summary>HTML</summary>
 
 [Index](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpersonal-library-mongodb.herokuapp.com%2Findex)
-[]()
-[]()
-[]()
-[]()
+[Profile]()
+[Add Book]()
+[Wrong Username/Password]()
+[Registration]()
 </details>
 
 <details>
 <summary>CSS, jQuery and Python PEP8</summary>
 
-[]
+![CSS Validation](/readmeimages/cssvalidation.png)
 []
 []
 </details>

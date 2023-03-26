@@ -22,7 +22,7 @@ body {
   font-family: 'Special Elite', serif;
 }
 
-div.blockcontent {
+section {
   flex: 1 0 auto;
 }
 
@@ -155,10 +155,14 @@ h5.howto {
   color:#fff;
 }
 
+li.uploading {
+  padding-top: 15px;
+}
+
 /* ------------------------------------ Book Entry Cards ------------------------------------ */
 
 .cardcontent {
-  padding-top: 10px 0 2px 5px;
+  padding: 10px 0px 2px 5px;
   font-size: 0.75em;
   font-weight: 500;
   color: white;
@@ -201,7 +205,7 @@ div.formentry {
   color: #524c48;
 }
 
-.cancelbutton {
+a.cancelbutton {
   padding-top: 3px;
   margin-right: 3px;
   background-color: #524c48;
