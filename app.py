@@ -26,7 +26,6 @@ def index():
 
 @app.route("/get_books")
 def get_books():
-
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -48,7 +47,7 @@ def get_books():
 
     categories = mongo.db.reading_list.find().sort("category_name", 1)
     return render_template(
-        "profile.html", booksread=book,
+        "profile.html", booksread=booksread,
         reading_list=categories, username=session["user"]
         )
 
