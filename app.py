@@ -62,13 +62,20 @@ def get_books():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    current_user = session['user']
+    find_user = mongo.db.users.find_one({'username': current_user})
+    booksreadbyuser = list(mongo.db.booksread.find({'username': current_user}))
     categories = mongo.db.reading_list.find().sort("category_name", 1)
     query = request.form.get("query")
-    booksread = list(mongo.db.booksread.find({"$text": {"$search": query}}))
+    booksread = list(mongo.db.booksread.find({
+        "$text": {"$search": query},
+        "username": current_user,
+        }))
 
     return render_template(
         "profile.html", username=session["user"],
-        booksread=booksread, reading_list=categories
+        booksread=booksread, reading_list=categories, users=find_user,
+        booksreadbyuser=booksreadbyuser
         )
 
 
@@ -181,7 +188,8 @@ def add_book():
 
     bookcat = mongo.db.reading_list.find().sort("category_name", 1)
     return render_template(
-        "add_book.html", reading_list=bookcat, username=session["user"], booksread=booksread, users=find_user)
+        "add_book.html", reading_list=bookcat, username=session["user"],
+        booksread=booksread, users=find_user)
 
 
 @app.route("/profile/<username>, <book_id>", methods=["GET", "POST"])
@@ -211,7 +219,7 @@ def edit_book(username, book_id):
 
     return render_template(
         "profile.html",
-        book=book, reading_list=categories, username=session["user"]
+        book=book, reading_list=categories, username=session["user"],
         )
 
 

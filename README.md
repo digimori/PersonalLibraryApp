@@ -266,7 +266,7 @@ Index - Login and Registration
 
 [Python PEP8]()
 
-[jQuery]()
+![jQuery](/readmeimages/jshintmetricsforpythonproject.png)
 </details>
 
 
@@ -350,7 +350,7 @@ Login with username/password (This requires multi-factor authentication through 
 | IP | 0.0.0.0 | Local IP |
 | PORT | 5000 | This is the port for Flask |
 | SECRET_KEY | Any secret key | A password for access |
-| MONGO_URI | mongodb+srv://root:<password>@<cluster_name>.ixpv5wd.mongodb.net/<database_name>?retryWrites=true&w=majority | Connection to Database |
+| MONGO_URI | mongodb+srv://<user_name>:<pass_word>@<cluster_name>.ixpv5wd.mongodb.net/<database_name>?retryWrites=true&w=majority | Connection to Database |
 | MONGO_DBNAME | <database_name> | Database name |
 | DEVELOPMENT | TRUE | Turns the workspace into a development state |
 | DEBUG | TRUE | Turns the Debugger on for the workspace |
