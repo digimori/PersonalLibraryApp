@@ -214,17 +214,41 @@ a.cancelbutton {
   font-family: 'Special Elite', serif;
 }
 
-.deletebutton {
+a.cancelbutton:active {
+  padding-top: 3px;
+  margin-right: 3px;
+  background-color: #524c48;
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Special Elite', serif;
+}
+
+a.cancelbutton:hover {
+  padding-top: 3px;
+  margin-right: 3px;
+  background-color: #fff;
+  color: #524c48;
+  border-radius: 10px;
+  font-family: 'Special Elite', serif;
+}
+
+a.deletebutton {
   padding-top: 3px;
   background-color: #a70000;
   color: #fff;
   border-radius: 10px;
   font-family: 'Special Elite', serif;
 }
+a.deletebutton:hover {
+  padding-top: 3px;
+  color: #000000;
+  border-radius: 10px;
+  font-family: 'Special Elite', serif;
+}
 
 /* ------------------------------------ Flash Messages ------------------------------------ */
 
-.flashmessage {
+h3.noresultstext {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -235,8 +259,7 @@ a.cancelbutton {
 
 /*------------------------------------ MEDIA QUERIES ------------------------------------ */
 
-/* Index page - 320px x 480px /*
-*/
+/* Index page - 320px x 480px */
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
   nav a.brand-logo {
@@ -278,8 +301,6 @@ a.cancelbutton {
     margin-bottom: 8px;
   }
 }
-
-
 
 /* ------ 769 x 1024-------*/
 

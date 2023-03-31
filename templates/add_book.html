@@ -4,137 +4,142 @@
 <div class="row outercontainer">
     <ul class="collapsible popout">
         <li>
-          <div class="collapsible-header explanation">
-            <i class="fas fa-caret-down white-text"></i> 
-            <h5 class="howto">How to find the information for your books:</h5>
-        </div>
-          <div class="collapsible-body">
-            <ul>
-                <li><strong>The finer details (ISBN, Release date, Publisher, Page Count):</strong></li>
-                <li>• <a href="https://en.wikipedia.org/wiki/Main_Page" aria-label="Link to Wikipedia.org (opens in new tab)" target="_blank">Wikipedia</a>
-                     will often have all of the details when searching for the titles themselves.</li>
-                <li>• Alternatively, book selling sites, such as 
-                    <a href="https://www.amazon.com/" aria-label="Link to Amazon.com (opens in new tab)" target="_blank">Amazon</a> 
-                    and <a href="https://www.bookdepository.com/" aria-label="Link to BookDepository.com (Opens in new tab)" target="_blank">Book Depository</a> 
-                    will also have these details</li>
+            <div class="collapsible-header explanation">
+                <i class="fas fa-caret-down white-text"></i>
+                <h5 class="howto">How to find the information for your books:</h5>
+            </div>
+            <div class="collapsible-body">
+                <ul>
+                    <li><strong>The finer details (ISBN, Release date, Publisher, Page Count):</strong></li>
+                    <li>• <a href="https://en.wikipedia.org/wiki/Main_Page"
+                            aria-label="Link to Wikipedia.org (opens in new tab)" target="_blank">Wikipedia</a>
+                        will often have all of the details when searching for the titles themselves.</li>
+                    <li>• Alternatively, book selling sites, such as
+                        <a href="https://www.amazon.com/" aria-label="Link to Amazon.com (opens in new tab)"
+                            target="_blank">Amazon</a>
+                        and <a href="https://www.bookdepository.com/"
+                            aria-label="Link to BookDepository.com (Opens in new tab)" target="_blank">Book
+                            Depository</a>
+                        will also have these details</li>
 
-                <li class="uploading"><strong>Uploading the book cover:</strong></li>
-                <li>• Find your book on 
-                    <a href="https://www.bookdepository.com/" aria-label="Link to BookDepository.com (Opens in new tab)" target="_blank">Book Depository</a></li>
-                <li>• Search for your book title </li>
-                <li>• On the page for your book, right click the book cover and select "Copy image address"</li>
-                <li>• Paste this link into the "Book IMG" field in the "Add book" form</li>
+                    <li class="uploading"><strong>Uploading the book cover:</strong></li>
+                    <li>• Find your book on
+                        <a href="https://www.bookdepository.com/"
+                            aria-label="Link to BookDepository.com (Opens in new tab)" target="_blank">Book
+                            Depository</a></li>
+                    <li>• Search for your book title </li>
+                    <li>• On the page for your book, right click the book cover and select "Copy image address"</li>
+                    <li>• Paste this link into the "Book IMG" field in the "Add book" form</li>
                 </ul>
-        </div>
+            </div>
         </li>
-      </ul>
+    </ul>
 
     <div class="col s12 m6 offset-m3">
-<div class="row card-panel grey lighten-5">
-    <form class="col s12" method="POST" action="{{ url_for('add_book') }}">
-<!-- Category Selection -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix brown-text text-darken-3"></i>
-                <select id="category_name" name="category_name" class="validate" required>
-                    <option value="" disabled selected>Choose Category</option>
-                    {% for category in reading_list %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                    {% endfor %}
-                </select>
-                <label for="category_name">Book category</label>
-            </div>
+        <div class="row card-panel grey lighten-5">
+            <form class="col s12" method="POST" action="{{ url_for('add_book') }}">
+                <!-- Category Selection -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-folder-open prefix brown-text text-darken-3"></i>
+                        <select id="category_name" name="category_name" class="validate" required>
+                            <option value="" disabled selected>Choose Category</option>
+                            {% for category in reading_list %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category_name">Book category</label>
+                    </div>
+                </div>
+                <!-- Book Details Form -->
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
+                        <input id="title" name="title" minlength="2" maxlength="50" type="text" class="validate"
+                            required>
+                        <label for="title">Book title:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
+                        <input id="author" name="author" minlength="3" maxlength="50" type="text" class="validate"
+                            required>
+                        <label for="author">Author:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-masks-theater prefix brown-text text-darken-3"></i>
+                        <input id="genre" name="genre" minlength="5" maxlength="50" type="text" class="validate"
+                            required>
+                        <label for="genre">Genre:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-star-half-stroke prefix brown-text text-darken-3"></i>
+                        <input id="rating" name="rating" minlength="2" maxlength="5" type="text" class="validate"
+                            placeholder="Out of 10, eg: 5/10">
+                        <label for="rating">Rating:</label>
+                    </div>
+                </div>
+                <!-- Release Date Picker -->
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
+                        <input id="release_date" name="release_date" type="text" class="datepicker validate" required>
+                        <label for="release_date">Publication Date:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-book prefix brown-text text-darken-3"></i>
+                        <input id="publisher" name="publisher" minlength="3" maxlength="15" type="text" class="validate"
+                            required>
+                        <label for="publisher">Publisher:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-hashtag prefix brown-text text-darken-3"></i>
+                        <input id="page_count" name="page_count" minlength="1" maxlength="5" type="text"
+                            class="validate">
+                        <label for="page_count">Page Count:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-barcode prefix brown-text text-darken-3"></i>
+                        <input id="isbn" name="isbn" minlength="3" maxlength="50" type="text" class="validate">
+                        <label for="isbn">ISBN-13</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
+                        <input id="synopsis" name="synopsis" minlength="3" maxlength="600" type="text" class="validate">
+                        <label for="synopsis">Synopsis</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 formentry">
+                        <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
+                        <input id="bookimg" name="bookimg" minlength="3" maxlength="600" type="text" class="validate">
+                        <label for="bookimg">Book IMG</label>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="row">
+                    <div class="col s12 center-align submitbutton">
+                        <button type="submit" class="btn-large brown darken-3 text-shadow">
+                            Add Book <i class="fas fa-plus-square right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-<!-- Book Details Form -->
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-pencil-alt prefix brown-text text-darken-3"></i>
-                <input id="title" name="title" minlength="2" maxlength="50"
-                    type="text" class="validate" required>
-                <label for="title">Book title:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-feather-alt prefix brown-text text-darken-3"></i>
-                <input id="author" name="author" minlength="3" maxlength="50"
-                    type="text" class="validate" required>
-                <label for="author">Author:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-masks-theater prefix brown-text text-darken-3"></i>
-                <input id="genre" name="genre" minlength="5" maxlength="50"
-                    type="text" class="validate" required>
-                <label for="genre">Genre:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-star-half-stroke prefix brown-text text-darken-3"></i>
-                <input id="rating" name="rating" minlength="2" maxlength="5"
-                    type="text" class="validate" placeholder="Out of 10, eg: 5/10">
-                <label for="rating">Rating:</label>
-            </div>
-        </div>
-        <!-- Release Date Picker -->
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-calendar-alt prefix brown-text text-darken-3"></i>
-                <input id="release_date" name="release_date" type="text" class="datepicker validate" required>
-                <label for="release_date">Publication Date:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-book prefix brown-text text-darken-3"></i>
-                <input id="publisher" name="publisher" minlength="3" maxlength="15"
-                    type="text" class="validate" required>
-                <label for="publisher">Publisher:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-hashtag prefix brown-text text-darken-3"></i>
-                <input id="page_count" name="page_count" minlength="1" maxlength="5"
-                    type="text" class="validate">
-                <label for="page_count">Page Count:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-barcode prefix brown-text text-darken-3"></i>
-                <input id="isbn" name="isbn" minlength="3" maxlength="50"
-                    type="text" class="validate">
-                <label for="isbn">ISBN-13</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
-                <input id="synopsis" name="synopsis" minlength="3" maxlength="600"
-                    type="text" class="validate">
-                <label for="synopsis">Synopsis</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 formentry">
-                <i class="fas fa-rectangle-list prefix brown-text text-darken-3"></i>
-                <input id="bookimg" name="bookimg" minlength="3" maxlength="600"
-                    type="text" class="validate">
-                <label for="bookimg">Book IMG</label>
-            </div>
-        </div>
-<!-- Submit Button -->
-        <div class="row">
-            <div class="col s12 center-align submitbutton">
-                <button type="submit" class="btn-large brown darken-3 text-shadow">
-                    Add Book <i class="fas fa-plus-square right"></i>
-                </button>
-            </div>
-        </div>
-    </form>
-</div></div></div>
+    </div>
+</div>
 
 {% endblock %}

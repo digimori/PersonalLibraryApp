@@ -8,64 +8,65 @@
     <script src="https://kit.fontawesome.com/58f44bc351.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap"
+        rel="stylesheet">
     <title>Personal Library</title>
 </head>
 
-<body> 
+<body>
     <header>
         <!-- top navbar -->
         {% if session.user %}
-		<nav class="nav-extended text-shadow s12 m6">
-			<div class="nav-wrapper">
-				<a href="{{ url_for('index') }}" class="brand-logo">My Personal Library</a>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="{{ url_for('index') }}">Home</a></li>
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-				</ul>
-			</div>
-		</nav>
- {% endif %}
-        <!-- mobile sidenav --> 
-		<ul class="sidenav" id="mobile-demo">
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-		</ul> 
-	</header>
+        <nav class="nav-extended text-shadow s12 m6">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('index') }}" class="brand-logo">My Personal Library</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                </ul>
+            </div>
+        </nav>
+        {% endif %}
+        <!-- mobile sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        </ul>
+    </header>
 
     <div class="flashedmessages">
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes col s12">
-                        <h3 class="center-align flashmessage col s10 offset-s1">{{ message }}</h3>
-                    </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes col s12">
+            <h3 class="center-align flashmessage col s10 offset-s1">{{ message }}</h3>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
-                </div>
+    </div>
 
-
-<section class="container">
-    <div class="maincontent">
-    {% block content %}
-    {% endblock %}
-</div>
+<section class="main">
+    <div class="container">
+            {% block content %}
+            {% endblock %}
+    </div>
 </section>
 
-<footer class="page-footer">
-      <div class="container" id="footertext">
-      Site Hosted on Heroku via <a class="grey-text text-lighten-4 footerlink" href="#" target="_blank">Github</a>
-      </div>
-  </footer>
+    <footer class="page-footer">
+        <div class="container" id="footertext">
+            Site Hosted on Heroku via <a class="grey-text text-lighten-4 footerlink" href="#" target="_blank">Github</a>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>

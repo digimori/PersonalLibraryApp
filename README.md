@@ -251,9 +251,9 @@ Index - Login and Registration
 <details>
 <summary>HTML</summary>
 
-[Index/Logout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpersonal-library-mongodb.herokuapp.com%2Findex)
-[Login - Incorrect User/Password]()
-[Registration](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpersonal-library-mongodb.herokuapp.com%2Fregister)
+- [Index/Logout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpersonal-library-mongodb.herokuapp.com%2Findex) 
+- [Login - Incorrect User/Password]() 
+- [Registration](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpersonal-library-mongodb.herokuapp.com%2Fregister)  
 
 - As the other pages are found behind user authentication, the validator cannot validate these by URL, so I have instead checked them through direct input and adjusted the code accordingly.
 
@@ -262,10 +262,13 @@ Index - Login and Registration
 <details>
 <summary>CSS, jQuery and Python PEP8</summary>
 
+[CSS Validation using Jigsaw]()
 ![CSS Validation](/readmeimages/cssvalidation.png)
 
-[Python PEP8]()
+[PEP8 Validation using CI's Linter]()
+[Python PEP8](/readmeimages/lintercheck.png)
 
+[jQuery Validation using JSHint]()
 ![jQuery](/readmeimages/jshintmetricsforpythonproject.png)
 </details>
 
