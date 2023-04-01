@@ -45,7 +45,7 @@
 {% if booksread|length > 0 %}
 {% for book in booksread %}
         <div class="col s12 m12 l6">
-        <div {% if book.category_name == 'To-Read' %} class='bluecat' {% endif %} class='bookcontent card-panel'>
+        <div {% if book.category_name == 'To-Read' %} class='bluecat card-panel' {% else %}  class='browncat card-panel'{% endif %}>
             <div class="row valign-wrapper">
                 {% if book.bookimg %}
                 <div class="col s3 bookimgcontainer">

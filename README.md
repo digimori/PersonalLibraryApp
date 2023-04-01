@@ -70,6 +70,8 @@ I also chose to use a cold colour for the "Unread books" cards over warm, as I r
 
 - The Navigation bar collapses into a hamburger menu on smaller screen sizes in order to not take up too much space. 
 
+- At a later point, I removed the Footer as there was little need for it to be there. It cluttered the page more than anything else and had no real practical use.
+
 ### Wireframes
 ---
 
@@ -87,33 +89,24 @@ I also chose to use a cold colour for the "Unread books" cards over warm, as I r
 - Add-Book page (User must be logged in):
 ![Add Book](/readmeimages/addbookpage.jpg)
 </details>
-***
+
+---
 
 ### Database Schema:-
 ---
+| Database schema (Books to Read): | Database Schema (Books that have been Read): |
+| ----------- | ----------- |
+| • Title | • Title |
+| • Author| • Author |
+| • Genre | • Genre |
+| • Rating (Hidden) | • Rating |
+| • Release Date | • Release Date
+| • Publisher | • Publisher |
+| • ISBN-13 | • ISBN-13 |
+| • Page Count | • Page Count |
+| • Synopsis | • Synopsis |
+| • Book Image URL | • Book Image URL |
 
-Database schema (Books to Read):
-- Title
-- Author
-- Genre
-- Release Date
-- Publisher
-- ISBN-13
-- Page Count
-- Synopsis
-- Book Image URL
-
-Database Schema (Books that have been Read):
-- Title
-- Author
-- Genre
-- Rating 
-- Release Date
-- Publisher
-- ISBN-13
-- Page Count
-- Synopsis 
-- Book Image URL
 
 
 I have ensured that the "Rating" input field, though part of both forms, is not required, so that when adding an un-read book, you do not need to add the star-rating to it straight away and can be added later.   

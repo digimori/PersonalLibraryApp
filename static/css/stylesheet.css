@@ -26,22 +26,6 @@ section {
   flex: 1 0 auto;
 }
 
-/* ------------------------------------ Footer  ------------------------------------ */
-
-#footertext {
-  padding-bottom: 15px;
-  font-family: 'Libre Baskerville', serif;
-}
-
-footer.page-footer {
-  background-color: #524c48;
-  width: 100%;
-}
-
-a.footerlink {
-  text-decoration: underline;
-}
-
 /* ------------------------------------ Welcome Messages ------------------------------------ */
 
 .welcomemessage {
@@ -101,7 +85,6 @@ div.card-panel.login {
 
 div.card-panel.bookcontent {
   border-radius: 20px;
-  background-color: #524c48;
   padding: 24px;
   margin: 0.5rem 0 1rem 0;
 }
@@ -183,7 +166,7 @@ p strong {
   letter-spacing: 1px;
 }
 
-.bluecat {
+div.card-panel.bluecat {
   background-color: #618C97;
   border-radius: 20px;
   padding: 24px;
@@ -191,9 +174,13 @@ p strong {
   font-family: 'Libre Baskerville', serif;
 }
 
-.browncat {
+div.card-panel.browncat {
   border-radius: 20px;
   background-color: #524c48;
+  border-radius: 20px;
+  padding: 24px;
+  margin: 0.5rem 0 1rem 0;
+  font-family: 'Libre Baskerville', serif;
 }
 
 /* ------------------------------------ Forms ------------------------------------ */
@@ -259,15 +246,15 @@ a.deletebutton:hover {
 /* ------------------------------------ Flash Messages ------------------------------------ */
 
 h3.noresultstext {
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 2px;
   color: #524c48;
   font-family: 'Libre Baskerville', serif;
 }
 
-div.flashedmessages {
-    font-size: 18px;
+.flashedmessages {
+    font-size: 0.5rem;
     font-weight: 600;
     letter-spacing: 2px;
     color: #524c48;
