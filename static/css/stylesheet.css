@@ -254,8 +254,15 @@ h3.noresultstext {
   letter-spacing: 2px;
   color: #524c48;
   font-family: 'Libre Baskerville', serif;
-  ;
 }
+
+div.flashedmessages {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #524c48;
+    font-family: 'Libre Baskerville', serif;
+  }
 
 /*------------------------------------ MEDIA QUERIES ------------------------------------ */
 

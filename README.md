@@ -120,7 +120,7 @@ I have ensured that the "Rating" input field, though part of both forms, is not 
 The categories are separated into "To_read" and "Read" to indicate whether or not the books have been read whilst maintaining a collated database on the back-end through MongoDB. 
 
 
-### Features
+### Features and Navigation
 ---
 
 #### Login/Logout/Register
@@ -168,6 +168,10 @@ The Search bar will display a "Results not found" message if the book entry does
 <details>
 <summary>Search Bar</summary>
 
+The search bar is implemented near the top of the page and the user is able to search by book Title or by Author as stated in the instructions. 
+The assigned book entry, if there is a match, will appear beneath the search bar, else, it will display the message of "No Results Found" 
+The user is also able to reset the field by pushing the reset button, which will re-reveal their book entries.  
+
 ![Search Bar](/readmeimages/searchbar.png)
 ![No Results](/readmeimages/noresults.png)
 
@@ -176,12 +180,11 @@ The Search bar will display a "Results not found" message if the book entry does
 <details>
 <summary>Book Entry cards</summary>
 
+The book entry cards themselves contain all of the information uploaded by the user from filling out the "Add Book" form. 
+Second to this, there are edit and delete buttons at the bottom, giving the user the options to edit their entries without having to completely submit a new form from scratch, or otherwise delete the entry if they no longer wish to have it in their collection.  
+
 ![Book Entry Cards](/readmeimages/cardsforbooks.png)
 </details>
-
-- Add, Edit pages for each category
-- Delete is a backend function
-    - Defensive program this with a Javascript modal
 
 
 ### Adding books
@@ -195,11 +198,16 @@ The Search bar will display a "Results not found" message if the book entry does
 <details>
 <summary>Collapsible instructions</summary>
 
+I chose to have the instructions as a collapsible just to make the page a little cleaner. 
+
 ![Instructions](/readmeimages/addbookcollapsible.png) 
 </details>
 
 <details>
 <summary>Book Form - Used to add books to the database</summary>
+
+The user inputs the information for their books into the fields and selects the category that they wish to upload it to.  
+Following this, they can then tap the "Add Book" button to add their book entry to their profile page. 
 
 ![Form for Books](/readmeimages/addbookform.png)
 </details>
@@ -213,7 +221,10 @@ The Search bar will display a "Results not found" message if the book entry does
 <details>
 <summary>Edit Form, Modal and Buttons</summary>
 
-![Edit form, buttons and modal]()
+The edit form modal has two options. The user is able to cancel their edits via either tapping outside of the form, or by tapping the cancel button at the bottom of the form itself.
+The form pre-populates with what has already been written in the entry previous, so that the form does not need to be repeatedly entered on each edit. 
+
+![Edit form, buttons and modal](/readmeimages/editbookmodal.png)
 
 </details>
 
@@ -224,24 +235,10 @@ The Search bar will display a "Results not found" message if the book entry does
 <details>
 <summary>Book Deletion modal</summary>
 
-![Delete Book Modal]()
+The user, once prompted, can either proceed with deleting the entry, or cancel the deletion process by pressing the cancel button. 
+
+![Delete Book Modal](/readmeimages/contentdeletemodal.png)
 </details>
-
-### Navigation
-
-Profile - 
- - Search bar - Reset and Search buttons
- - Book entries - Edit and Delete buttons
- - Modals - Edit/Delete/Cancel buttons
-
-Add Book - 
- - Add Book
- - Instructions collapsible
-
-Logout - Logout - Returns to Index
-
-Index - Login and Registration
-
 
 ### Testing and Validation:
 --- 
@@ -255,20 +252,20 @@ Index - Login and Registration
 - [Login - Incorrect User/Password]() 
 - [Registration](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpersonal-library-mongodb.herokuapp.com%2Fregister)  
 
-- As the other pages are found behind user authentication, the validator cannot validate these by URL, so I have instead checked them through direct input and adjusted the code accordingly.
+- Profile/AddBook - Needs direct input
 
 </details>
 
 <details>
 <summary>CSS, jQuery and Python PEP8</summary>
 
-[CSS Validation using Jigsaw]()
+[CSS Validation using Jigsaw](https://validator.w3.org/)
 ![CSS Validation](/readmeimages/cssvalidation.png)
 
-[PEP8 Validation using CI's Linter]()
+[PEP8 Validation using CI's Linter](https://pep8ci.herokuapp.com/)
 [Python PEP8](/readmeimages/lintercheck.png)
 
-[jQuery Validation using JSHint]()
+[jQuery Validation using JSHint](https://jshint.com/)
 ![jQuery](/readmeimages/jshintmetricsforpythonproject.png)
 </details>
 
