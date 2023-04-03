@@ -172,6 +172,8 @@ div.card-panel.bluecat {
   padding: 24px;
   margin: 0.5rem 0 1rem 0;
   font-family: 'Libre Baskerville', serif;
+  display: flex;  
+  flex-wrap: wrap;
 }
 
 div.card-panel.browncat {
@@ -181,6 +183,13 @@ div.card-panel.browncat {
   padding: 24px;
   margin: 0.5rem 0 1rem 0;
   font-family: 'Libre Baskerville', serif;
+  display: flex;  
+  flex-wrap: wrap;
+}
+
+div.row.bookcontainer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* ------------------------------------ Forms ------------------------------------ */
