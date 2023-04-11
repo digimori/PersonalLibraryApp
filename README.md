@@ -21,9 +21,9 @@ I wanted it to be an easily accessible, no particular bells and whistles approac
 - [Developer Goals](#developer-goals)
 - [User Stories](#user-stories)
 - [Design Choices](#design-choices-fonts-colours-and-images-cards-and-hamburger-menus)
-- [Wireframes](#wireframes-adobe-photoshop)
+- [Wireframes](#wireframes)
 - [Database Schema](#database-schema)
-- [Features](#features)
+- [Features](#features-and-navigation)
 - [Navigation](#navigation)
 - [Testing And Validation](#testing-and-validation)
 - [Deployment](#deployment-github-and-heroku)
@@ -92,7 +92,7 @@ I also chose to use a cold colour for the "Unread books" cards over warm, as I r
 
 ---
 
-### Database Schema:-
+### Database Schema
 ---
 | Database schema (Books to Read): | Database Schema (Books that have been Read): |
 | ----------- | ----------- |
