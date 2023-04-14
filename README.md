@@ -50,9 +50,12 @@ I want the database to be searcheable to find the book the user wants by title, 
 
 ### User Stories:
 ---
-- As a user of this app, I want to be able to log in from the landing page into a profile where my reading list will be stored.
-- I want to be able to seperate my books into "Read" and "To Read" categories for easy browsing, and be able to search by Author or Title.
-- I want to be able to easily add, edit and delete books from my Reading List profile and be in control of which categories they are listed in.
+
+| As a ... | I want to ... |
+| ----------- | ----------- |
+| User: |  I want to be able to log in from the landing page into a profile where my reading list will be stored. |
+| User: | I want to be able to seperate my books into "Read" and "To Read" categories for easy browsing, and be able to search by Author or Title. |
+| User: | I want to be able to easily add, edit and delete books from my Reading List profile and be in control of which categories they are listed in. |
 
 
 ### Design Choices (Fonts, Colours and images, cards and hamburger menus):
