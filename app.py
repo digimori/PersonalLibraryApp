@@ -164,6 +164,10 @@ def logout():
 
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
+    if 'user' not in session:
+        flash('You need to log in to add a book')
+        return redirect(url_for('login'))
+
     current_user = session['user']
     find_user = mongo.db.users.find_one({'username': current_user})
     booksread = list(mongo.db.booksread.find({'username': current_user}))
@@ -194,6 +198,18 @@ def add_book():
 
 @app.route("/profile/<username>, <book_id>", methods=["GET", "POST"])
 def edit_book(username, book_id):
+    if 'user' not in session:
+        # if a user tries to edit book entry without been logged in
+
+        flash('You need to log in to edit a book')
+        return redirect(url_for('login'))
+
+    book = mongo.db.booksread.find({"_id": ObjectId(book_id)}, submit)
+
+    if book['username'] != session['username']:
+        flash('You do  not own this book entry and therefore cannot edit it.')
+        return redirect(url_for('login'))
+
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -210,7 +226,6 @@ def edit_book(username, book_id):
             "username": session["user"]
         }
 
-        book = mongo.db.booksread.find({"_id": ObjectId(book_id)}, submit)
         mongo.db.booksread.replace_one(
             {"_id": ObjectId(book_id)}, submit, True)
         categories = mongo.db.reading_list.find().sort("category_name", 1)
@@ -225,6 +240,14 @@ def edit_book(username, book_id):
 
 @app.route("/delete_book/<book_id>")
 def delete_book(book_id):
+
+    book = mongo.db.booksread.find({"_id": ObjectId(book_id)}, submit)
+
+    if book['username'] != session['username']:
+        flash(
+            'You do not own this book entry and therefore cannot delete it.')
+        return redirect(url_for('login'))
+
     mongo.db.booksread.delete_one({"_id": ObjectId(book_id)})
     flash("Book Entry Successfully Deleted")
     return redirect(url_for("profile", username=session["user"]))

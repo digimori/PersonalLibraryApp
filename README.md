@@ -256,7 +256,7 @@ The user, once prompted, can either proceed with deleting the entry, or cancel t
 ![CSS Validation](/readmeimages/cssvalidation.png)
 
 [PEP8 Validation using CI's Linter](https://pep8ci.herokuapp.com/)
-[Python PEP8](/readmeimages/lintercheck.png)
+![Python PEP8](/readmeimages/lintercheck.png)
 
 [jQuery Validation using JSHint](https://jshint.com/)
 ![jQuery](/readmeimages/jshintmetricsforpythonproject.png)
@@ -278,6 +278,7 @@ The user, once prompted, can either proceed with deleting the entry, or cancel t
 | Reset Search | When the reset button is pressed, to return to the profile page with all of the entries intact | Pass |
 | Edit Searched Book | I want the user to be able to edit the book once it has been searched for by opening the "Edit book" modal | Pass |
 | Delete Searched Book | I expect the Delete button to still trigger the modal for defensive programming, even after being searched | Pass |
+| Force add_book page | I expect there to be defensive programming in place, redirecting me to the login page if I try to force my way into the add_book page without being logged in | Pass |
 
 
 ### Media Queries
@@ -293,6 +294,7 @@ This was also used to test the responsiveness as I could change the breakpoints 
 | Modal Bug | When editing forms or deleting an entry through the modal, it would only delete the first entry | Put unique id tags on the divs that opened and connected the modals so that it could identify what was being specifically edited or deleted |
 | Unable to select Category on Edit form | When selected, the edit form would not show the categories available for selection | Redefined the reading_list in the render_template method so that it linked to the category function |
 | Books not displaying | I originally had books read and unread in separate collections, which made it harder to manage the data from a front-end point | Consolidated the books to one collection, separated instead by category_name to make them easier to loop through |
+| Forcing Access to pages | I was able to brute force my way into the add_book page and edit/delete functions without logging in which is a security issue | Added defensive programming that redirects the user to the login page if they try to force their way in through the address bar | 
 
 ### Deployment (Github and Heroku):
 ---
@@ -345,8 +347,8 @@ Login with username/password (This requires multi-factor authentication through 
 | SECRET_KEY | Any secret key | A password for access |
 | MONGO_URI | mongodb+srv://<user_name>:<pass_word>@<cluster_name>.ixpv5wd.mongodb.net/<database_name>?retryWrites=true&w=majority | Connection to Database |
 | MONGO_DBNAME | <database_name> | Database name |
-| DEVELOPMENT | TRUE | Turns the workspace into a development state |
-| DEBUG | TRUE | Turns the Debugger on for the workspace |
+| DEVELOPMENT | FALSE | Turns the workspace off of the development state |
+| DEBUG | FALSE | Turns the Debugger off for the workspace |
 
 
 - Once those are saved, navigate to the Deploy tab
