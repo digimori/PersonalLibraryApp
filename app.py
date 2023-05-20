@@ -240,12 +240,10 @@ def edit_book(username, book_id):
 
 @app.route("/delete_book/<book_id>")
 def delete_book(book_id):
+    if 'user' not in session:
+        # if a user tries to delete book entry without been logged in
 
-    book = mongo.db.booksread.find({"_id": ObjectId(book_id)}, submit)
-
-    if book['username'] != session['username']:
-        flash(
-            'You do not own this book entry and therefore cannot delete it.')
+        flash('You need to log in to edit a book')
         return redirect(url_for('login'))
 
     mongo.db.booksread.delete_one({"_id": ObjectId(book_id)})
@@ -256,4 +254,4 @@ def delete_book(book_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)

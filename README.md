@@ -298,6 +298,7 @@ This was also used to test the responsiveness as I could change the breakpoints 
 | Unable to select Category on Edit form | When selected, the edit form would not show the categories available for selection | Redefined the reading_list in the render_template method so that it linked to the category function |
 | Books not displaying | I originally had books read and unread in separate collections, which made it harder to manage the data from a front-end point | Consolidated the books to one collection, separated instead by category_name to make them easier to loop through |
 | Forcing Access to pages | I was able to brute force my way into the add_book page and edit/delete functions without logging in which is a security issue | Added defensive programming that redirects the user to the login page if they try to force their way in through the address bar | 
+| Delete Bug | Delete function attached to modal was redirecting to an internal server error. This is due to me essentially doing a copy-paste from the edit book view without removing the username filter as Cursor objects cannot target it | Removed the Cursor that was causing the issue. Maintained security by having if 'user' in session as a method to stop brute forcing |
 
 ### Deployment (Github and Heroku):
 ---
