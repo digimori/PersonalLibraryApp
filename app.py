@@ -204,11 +204,7 @@ def edit_book(username, book_id):
         flash('You need to log in to edit a book')
         return redirect(url_for('login'))
 
-    book = mongo.db.booksread.find({"_id": ObjectId(book_id)}, submit)
-
-    if book['username'] != session['username']:
-        flash('You do  not own this book entry and therefore cannot edit it.')
-        return redirect(url_for('login'))
+    book = mongo.db.booksread.find({"_id": ObjectId(book_id)})
 
     if request.method == "POST":
         submit = {
