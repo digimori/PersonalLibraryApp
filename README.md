@@ -55,8 +55,11 @@ I want the database to be searcheable to find the book the user wants by title, 
 | ----------- | ----------- |
 | User: |  I want to be able to log in from the landing page into a profile where my reading list will be stored. |
 | User: | I want to be able to seperate my books into "Read" and "To Read" categories for easy browsing, and be able to search by Author or Title. |
-| User: | I want to be able to easily add, edit and delete books from my Reading List profile and be in control of which categories they are listed in. |
-
+| User: | I want to be able to easily add books to my list |
+| User: | I want to be able to edit books in my reading list in case I input incorrect information |
+| User: | I want to be able to delete books from my Reading List profile |
+| User: | I want to  be in control of which categories the books are listed in to determine what as been read and what has not |
+| User: | I want to be able to add an image of the book cover to easily identify the books by visuals | 
 
 ### Design Choices (Fonts, Colours and images, cards and hamburger menus):
 ---
@@ -273,7 +276,7 @@ The user, once prompted, can either proceed with deleting the entry, or cancel t
 | Login Form | I expect the form to recognize my login credentials and create a session to login to my profile | Pass |
 | Registration Form | I expect the form to register a new user to the database, whilst checking if the username is taken or not. | Pass |
 | Add Book Form| I expect to be able to fill the details of books for my database onto a form, that will then submit the data and allow it to be pulled onto cards that are set out on the profile page. | Pass |
-| Edit Book Button | When clicked, I want the edit book button to open a modal containing a form for editing the entry.   I then want this form to directly edit the entry and submit the data to the database.  | Pass |
+| Edit Book Button | When clicked, I want the edit book button to open a modal containing a form for editing the entry. I then want this form to directly edit the entry and submit and save the data to the database. | Pass |
 | Delete Book | When clicked, I expect a modal to open, confirming if I want the entry to be deleted and not directly delete on press. | Pass |
 | Delete Modal | I want the delete modal to open when the Delete button is pressed, giving the user the option to delete the entry, or cancel the operation | Pass |
 | Logout | When the logout button is pressed, I want the session cookie to be removed from the user in order to log the user out. | Pass |
@@ -299,6 +302,7 @@ This was also used to test the responsiveness as I could change the breakpoints 
 | Books not displaying | I originally had books read and unread in separate collections, which made it harder to manage the data from a front-end point | Consolidated the books to one collection, separated instead by category_name to make them easier to loop through |
 | Forcing Access to pages | I was able to brute force my way into the add_book page and edit/delete functions without logging in which is a security issue | Added defensive programming that redirects the user to the login page if they try to force their way in through the address bar | 
 | Delete Bug | Delete function attached to modal was redirecting to an internal server error. This is due to me essentially doing a copy-paste from the edit book view without removing the username filter as Cursor objects cannot target it | Removed the Cursor that was causing the issue. Maintained security by having if 'user' in session as a method to stop brute forcing |
+| Edit Bug | Editing the book would throw an error with the cursor object | Removed the Cursor causing the issue. It was the same bug as the Delete issue above | 
 
 ### Deployment (Github and Heroku):
 ---
