@@ -151,14 +151,14 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-hashtag prefix brown-text text-darken-3"></i>
-                                <input name="page_count" minlength="1" maxlength="6" type="number" class="validate"
+                                <input name="page_count" min="0" minlength="1" maxlength="6" type="number" class="validate"
                                     value="{{ book.page_count }}" placeholder="Page Count" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-barcode prefix brown-text text-darken-3"></i>
-                                <input name="isbn" minlength="5" maxlength="50" type="number" class="validate"
+                                <input name="isbn" minlength="5" min="0" maxlength="50" type="number" class="validate"
                                     value="{{ book.isbn }}" placeholder="ISBN-13" required>
                             </div>
                         </div>
