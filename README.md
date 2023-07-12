@@ -285,6 +285,7 @@ The user, once prompted, can either proceed with deleting the entry, or cancel t
 | Edit Searched Book | I want the user to be able to edit the book once it has been searched for by opening the "Edit book" modal | Pass |
 | Delete Searched Book | I expect the Delete button to still trigger the modal for defensive programming, even after being searched | Pass |
 | Force add_book page | I expect there to be defensive programming in place, redirecting me to the login page if I try to force my way into the add_book page without being logged in | Pass |
+| Test Logs from Heroku | Running the log alongside manual testing on Heroku - Can be found under personal-library-mongodb-logs.txt file in Git/Workspace | Pass |
 
 
 ### Media Queries
